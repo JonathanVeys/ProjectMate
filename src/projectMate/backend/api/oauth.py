@@ -22,7 +22,7 @@ async def login(request: Request):
     print("Redirect URI being sent to Google:", redirect_uri)
     return await oauth.google.authorize_redirect(request, redirect_uri) #type:ignore
 
-@router.get("/callback")
+@router.get("/auth")
 async def auth(request: Request):
     token = await oauth.google.authorize_access_token(request) #type:ignore
     user_info = token["userinfo"]
