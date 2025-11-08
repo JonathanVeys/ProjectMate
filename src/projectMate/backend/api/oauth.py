@@ -26,3 +26,6 @@ async def auth(request: Request):
     token = await oauth.google.authorize_access_token(request)
     user_info = token["userinfo"]
     return {"email": user_info["email"], "name": user_info["name"]}
+
+
+#run http://127.0.0.1:8000/auth/login
