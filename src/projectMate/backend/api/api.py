@@ -10,5 +10,11 @@ app.add_middleware(
     secret_key="a-very-secret-key",  # change this to something secure in production
 )
 
+
+@app.get("/")
+def root():
+    return {"message": "✅ ProjectMate API is running!"}
+
+
 app.include_router(upload.router)
 app.include_router(oauth.router)

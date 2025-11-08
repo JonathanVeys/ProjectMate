@@ -19,11 +19,12 @@ oauth.register(
 @router.get("/login")
 async def login(request: Request):
     redirect_uri = request.url_for("auth")
-    return await oauth.google.authorize_redirect(request, redirect_uri)
+    print("Redirect URI being sent to Google:", redirect_uri)
+    return await oauth.google.authorize_redirect(request, redirect_uri) #type:ignore
 
 @router.get("/callback")
 async def auth(request: Request):
-    token = await oauth.google.authorize_access_token(request)
+    token = await oauth.google.authorize_access_token(request) #type:ignore
     user_info = token["userinfo"]
     return {"email": user_info["email"], "name": user_info["name"]}
 
