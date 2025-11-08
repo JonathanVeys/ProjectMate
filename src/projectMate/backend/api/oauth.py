@@ -2,7 +2,6 @@ from fastapi import APIRouter, Request
 from fastapi.responses import RedirectResponse
 from authlib.integrations.starlette_client import OAuth
 from starlette.config import Config
-from starlette.middleware.sessions import SessionMiddleware
 from fastapi.templating import Jinja2Templates
 
 router = APIRouter(prefix="/auth", tags=["auth"])
@@ -33,4 +32,4 @@ async def auth(request: Request):
     request.session["user"] = user_info
 
     # Redirect to upload page after login
-    return RedirectResponse(url="/upload/page")
+    return RedirectResponse(url="/upload/")

@@ -2,15 +2,20 @@ from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from starlette.middleware.sessions import SessionMiddleware
+from starlette.staticfiles import StaticFiles
+from starlette.config import Config
 
 from . import upload, oauth
 
 app = FastAPI()
 
+config = Config(".env")
+
 app.add_middleware(
     SessionMiddleware,
-    secret_key="a-very-secret-key",  # change this in production
+    secret_key=config("SECRET_KEY")
 )
+app.mount("/static", StaticFiles(directory="src/projectMate/static"), name="static")
 
 templates = Jinja2Templates(directory="src/projectMate/templates")
 

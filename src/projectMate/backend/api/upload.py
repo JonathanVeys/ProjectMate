@@ -36,7 +36,7 @@ def extract_text_from_docx(file_bytes: bytes) -> str:
 def extract_text_from_txt(file_bytes: bytes) -> str:
     return file_bytes.decode("utf-8", errors="ignore")
 
-@router.post("/")
+@router.post("/upload")
 async def upload_file(file: UploadFile = File(...)):
     file_type = detect_file_type(file)
 
@@ -58,7 +58,9 @@ async def upload_file(file: UploadFile = File(...)):
         "preview": text
     }
 
-@router.get("/page", response_class=HTMLResponse)
+
+
+@router.get("/", response_class=HTMLResponse)
 async def upload_page(request: Request):
     user = request.session.get("user")
     if not user:
