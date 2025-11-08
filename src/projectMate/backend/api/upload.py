@@ -1,4 +1,7 @@
-from fastapi import APIRouter, File, UploadFile, HTTPException
+from fastapi import APIRouter, File, UploadFile, HTTPException, Request
+from fastapi.responses import RedirectResponse
+from fastapi.templating import Jinja2Templates
+from fastapi.responses import HTMLResponse
 import pdfplumber
 import io
 import docx
@@ -7,9 +10,10 @@ from src.projectMate.logging import logger
 
 
 router = APIRouter(prefix="/upload", tags=["upload"])
+templates = Jinja2Templates(directory="src/projectMate/templates")
 
 def detect_file_type(file: UploadFile) -> str:
-    filename = file.filename.lower()
+    filename = file.filename.lower() #type:ignore
     content_type = file.content_type
     if isinstance(content_type, str):
         if filename.endswith(".pdf") or content_type == "application/pdf":
@@ -32,7 +36,7 @@ def extract_text_from_docx(file_bytes: bytes) -> str:
 def extract_text_from_txt(file_bytes: bytes) -> str:
     return file_bytes.decode("utf-8", errors="ignore")
 
-@router.post("/upload")
+@router.post("/")
 async def upload_file(file: UploadFile = File(...)):
     file_type = detect_file_type(file)
 
@@ -53,3 +57,11 @@ async def upload_file(file: UploadFile = File(...)):
         "length": len(text),
         "preview": text
     }
+
+@router.get("/page", response_class=HTMLResponse)
+async def upload_page(request: Request):
+    user = request.session.get("user")
+    if not user:
+        return RedirectResponse(url="/auth/")  # force login
+
+    return templates.TemplateResponse("upload.html", {"request": request, "name": user["name"]})

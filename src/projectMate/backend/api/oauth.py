@@ -1,9 +1,12 @@
-from fastapi import FastAPI, Request, APIRouter
+from fastapi import APIRouter, Request
+from fastapi.responses import RedirectResponse
 from authlib.integrations.starlette_client import OAuth
 from starlette.config import Config
 from starlette.middleware.sessions import SessionMiddleware
+from fastapi.templating import Jinja2Templates
 
 router = APIRouter(prefix="/auth", tags=["auth"])
+templates = Jinja2Templates(directory="src/projectMate/templates")
 
 config = Config(".env")
 oauth = OAuth(config)
@@ -16,17 +19,18 @@ oauth.register(
     client_kwargs={"scope": "openid email profile"},
 )
 
-@router.get("/login")
+@router.get("/")
 async def login(request: Request):
-    redirect_uri = request.url_for("auth")
-    print("Redirect URI being sent to Google:", redirect_uri)
+    redirect_uri = request.url_for("auth")  # callback
     return await oauth.google.authorize_redirect(request, redirect_uri) #type:ignore
 
 @router.get("/auth")
 async def auth(request: Request):
     token = await oauth.google.authorize_access_token(request) #type:ignore
     user_info = token["userinfo"]
-    return {"email": user_info["email"], "name": user_info["name"]}
 
+    # 🔐 Store the user in session
+    request.session["user"] = user_info
 
-#run http://127.0.0.1:8000/auth/login
+    # Redirect to upload page after login
+    return RedirectResponse(url="/upload/page")
