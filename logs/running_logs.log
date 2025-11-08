@@ -1,0 +1,26 @@
+[2025-11-07 11:51:18,029;INFO;main;This is the first log the project]
+[2025-11-07 12:18:15,935;INFO;upload;Successfully read Jonathan_Crocker.pdf]
+[2025-11-07 12:43:26,857;ERROR;utils;Form data requires "python-multipart" to be installed. 
+You can install "python-multipart" with: 
+
+pip install python-multipart
+]
+[2025-11-08 09:30:16,984;ERROR;utils;Form data requires "python-multipart" to be installed. 
+You can install "python-multipart" with: 
+
+pip install python-multipart
+]
+[2025-11-08 09:41:22,386;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2025-11-08 09:41:54,660;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2025-11-08 09:44:56,684;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2025-11-08 09:45:30,362;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2025-11-08 09:48:18,174;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2025-11-08 09:48:25,092;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2025-11-08 09:48:25,203;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2025-11-08 09:50:14,029;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2025-11-08 09:51:36,143;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2025-11-08 09:51:45,562;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2025-11-08 09:51:45,655;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2025-11-08 09:59:37,328;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2025-11-08 09:59:40,121;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2025-11-08 09:59:40,225;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]

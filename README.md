@@ -39,5 +39,5 @@ Whether for dissertations, coding assignments, or group projects, Coursework Cop
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/<your-username>/coursework-copilot.git
-cd coursework-copilot
+git clone https://github.com/JonathanVeys/ProjectMate
+cd ProjectMate
