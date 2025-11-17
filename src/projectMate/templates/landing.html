@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ProjectMate</title>
+
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', path='css/landing.css') }}">
+
+    <!-- Favicon (optional) -->
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+    <!-- Navigation / Header -->
+    <header>
+        <nav>
+            <div class="logo">ProjectMate</div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/upload">Upload</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/about">{{ name }}</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content of the page -->
+    <main>
+        <section class="hero">
+            <h1>Welcome to ProjectMate {{ name }}</h1>
+            <p>Your coursework assistant powered by AI.</p>
+            <a class="cta-button" href="/upload">Get Started</a>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            <div class="tiles-container">
+                <div class="tile">
+                    <h3>Tile Title</h3>
+                    <p>Description text...</p>
+                    <a href="/upload">Try Now</a>
+                </div>
+
+                <div class="tile">
+                    <h3>Another Tile</h3>
+                    <p>A second example tile...</p>
+                    <a href="/upload">Try Now</a>
+                </div>
+
+                <div class="tile">
+                    <h3>Third Tile</h3>
+                    <p>Something else...</p>
+                    <a href="/upload">Try Now</a>
+                </div>
+
+                <div class="tile">
+                    <a href="new_project">Add New Project</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Placeholder for more sections -->
+        <section class="features">
+            <h2>Features</h2>
+            <p>This is a machine learning powered project tracker designed for students. Build timelines, keep track of deadlines, and ace your courses with the AI assisstant</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 ProjectMate. All rights reserved.</p>
+    </footer>
+
+    <!-- Link to your JavaScript file (you can fill this later) -->
+    <script src="script.js"></script>
+</body>
+</html>

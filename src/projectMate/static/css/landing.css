@@ -1,0 +1,137 @@
+/* ----------------------------------------
+   1. Reset default browser styling
+----------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ----------------------------------------
+   2. Global body styling
+----------------------------------------- */
+body {
+    font-family: 'Inter', Arial, sans-serif; /* clean modern font */
+    background-color: #f8f9fa;              /* light grey background */
+    color: #333;                             /* readable dark grey text */
+    line-height: 1.6;                         /* nicer text spacing */
+}
+
+/* ----------------------------------------
+   3. Container for centering content
+----------------------------------------- */
+main, section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* ----------------------------------------
+   4. Headings
+----------------------------------------- */
+h1, h2, h3 {
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* ----------------------------------------
+   5. Links
+----------------------------------------- */
+a {
+    color: #5a67d8; /* soft indigo */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ----------------------------------------
+   6. Buttons
+----------------------------------------- */
+button, .cta-button {
+    background-color: #6C63FF; /* purple/indigo */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: inline-block;
+    transition: background 0.2s ease;
+}
+
+button:hover, .cta-button:hover {
+    background-color: #5848e5;
+}
+
+/* ----------------------------------------
+   7. Navigation bar basics
+----------------------------------------- */
+header {
+    background-color: white;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 15px 20px;
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    font-weight: 500;
+    color: #333;
+}
+
+nav a:hover {
+    color: #6C63FF;
+}
+
+/* ----------------------------------------
+   8. Footer
+----------------------------------------- */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+
+
+.tile {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 12px;
+    width: 260px;
+    background-color: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin: 10px;
+}
+
+.tile h3 {
+    margin-top: 0;
+}
+
+.tiles-container {
+    display: flex;
+    gap: 20px;
+    justify-content: left;
+    flex-wrap: wrap;
+}

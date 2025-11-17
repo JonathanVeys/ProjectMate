@@ -66,4 +66,4 @@ async def upload_page(request: Request):
     if not user:
         return RedirectResponse(url="/auth/")  # force login
 
-    return templates.TemplateResponse("upload.html", {"request": request, "name": user["name"]})
+    return templates.TemplateResponse("landing.html", {"request": request, "name": user["name"]})

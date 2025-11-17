@@ -3,9 +3,39 @@
 <head><title>Upload</title></head>
 <body>
   <h2>Hello, {{ name }}!</h2>
-  <form action="/upload/upload" method="post" enctype="multipart/form-data">
-      <input type="file" name="file">
-      <button type="submit">Upload</button>
+      <label for="project_spec">Project Specification</label>
+      <textarea id="project_spec" name="project_spec" rows="10" cols="50"
+                placeholder="Paste your project specification here..."></textarea>
+
+      <br><br>
+
+      <button id="extractBtn">Extract Info</button>
+
+      <script>
+          document.getElementById("extractBtn").addEventListener("click", function () {
+              // Get the text inside the textarea
+              const projectSpec = document.getElementById("project_spec").value;
+
+              console.log("User input:", projectSpec);
+
+              // Example: send it to your FastAPI endpoint
+              fetch("http://127.0.0.1:8000/inference", {
+                  method: "POST",
+                  headers: {
+                      "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({ project_spec: projectSpec })
+              })
+              .then(response => response.json())
+              .then(data => {
+                  console.log("Response from API:", data);
+                  // You can display the result on the page if you want
+              })
+              .catch(error => console.error("Error:", error));
+          });
+      </script>
+
+
   </form>
 </body>
 </html>

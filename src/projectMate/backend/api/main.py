@@ -7,15 +7,7 @@ from starlette.middleware.sessions import SessionMiddleware
 from starlette.staticfiles import StaticFiles
 from starlette.config import Config
 
-from . import upload, oauth
-
-# CURRENT_DIR = Path(__file__).resolve()
-# for parent in CURRENT_DIR.parents:
-#     if (parent / "src").exists():
-#         PACKAGE_DIR = parent
-#         break
-# else:
-#     raise FileNotFoundError("Could not find project root containing 'data' folder")
+from . import upload, oauth, model_inference
 
 CURRENT_DIR = Path(__file__).resolve()
 BASE_DIR = CURRENT_DIR.parent.parent.parent  # -> src/projectMate/
@@ -37,7 +29,7 @@ templates = Jinja2Templates(directory="src/projectMate/templates")
 
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse("login.html", {"request": request})
 
 @app.head("/")
 async def health_check():
@@ -45,3 +37,6 @@ async def health_check():
 
 app.include_router(upload.router)
 app.include_router(oauth.router)
+app.include_router(model_inference.router)
+
+
