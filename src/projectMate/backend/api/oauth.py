@@ -1,47 +1,14 @@
-# from fastapi import APIRouter, Request
-# from fastapi.responses import RedirectResponse, HTMLResponse
-# from authlib.integrations.starlette_client import OAuth
-# from starlette.config import Config
-
-# router = APIRouter(tags=["auth"])
-
-# config = Config(".env")
-# oauth = OAuth(config)
-
-# oauth.register(
-#     name="google",
-#     client_id=config("GOOGLE_CLIENT_ID"),
-#     client_secret=config("GOOGLE_CLIENT_SECRET"),
-#     server_metadata_url="https://accounts.google.com/.well-known/openid-configuration",
-#     client_kwargs={"scope": "openid email profile"},
-# )
-
-
-# @router.get("/login")
-# async def login(request: Request):
-#     redirect_uri = request.url_for("auth")  # callback
-#     print("Redirect URI:", redirect_uri)
-#     return await oauth.google.authorize_redirect(request, redirect_uri) #type:ignore
-
-
-# @router.get("/auth")
-# async def auth(request: Request):
-#     token = await oauth.google.authorize_access_token(request) #type:ignore
-#     user_info = token["userinfo"]
-
-#     # 🔐 Store the user in session
-#     request.session["user"] = user_info
-
-#     # Redirect to upload page after login
-#     return RedirectResponse(url="/")
-
-
+import datetime
+from typing import Dict, Any
 
 from fastapi import APIRouter, Request
 from fastapi.responses import RedirectResponse, HTMLResponse
 from authlib.integrations.starlette_client import OAuth
 from starlette.config import Config
 from fastapi.templating import Jinja2Templates
+
+from .supabase_client import supabase  
+
 
 router = APIRouter()
 templates = Jinja2Templates(directory="src/projectMate/templates")
@@ -58,17 +25,13 @@ oauth.register(
 )
 
 
-# -----------------------------------------
 # LOGIN PAGE (shows "Login with Google")
-# -----------------------------------------
 @router.get("/", response_class=HTMLResponse)
 async def show_login(request: Request):
     return templates.TemplateResponse("login.html", {"request": request})
 
 
-# -----------------------------------------
 # START OAUTH LOGIN
-# -----------------------------------------
 @router.get("/login")
 async def login(request: Request):
     redirect_uri = request.url_for("auth")
@@ -76,24 +39,44 @@ async def login(request: Request):
     return await oauth.google.authorize_redirect(request, redirect_uri)
 
 
-# -----------------------------------------
 # OAUTH CALLBACK
-# -----------------------------------------
 @router.get("/auth")
 async def auth(request: Request):
+    user_row: Dict[str, Any]
     token = await oauth.google.authorize_access_token(request)
     user_info = token["userinfo"]
 
-    # Save user in session
-    request.session["user"] = user_info
+    email = user_info["email"]
+    name = user_info.get("name", "")
+    avatar_url = user_info.get("picture", "")
 
-    # Redirect to landing page
+    response = supabase.table("profiles").select("*").eq("email", email).execute()
+    user_data = response.data
+
+    if not user_data:
+        insert_res = supabase.table("profiles").insert({
+            "email": email,
+            "name": name,
+            "picture_url": avatar_url,
+            "date_created": str(datetime.datetime.now())
+        }).execute()
+
+        user_row = insert_res.data[0]
+    else:
+        user_row = user_data[0]
+    
+    request.session["user"] = {
+        "id": user_row["id"],             
+        "email": user_row["email"],
+        "name": user_row["name"],
+        "picture_url": user_row["picture_url"],
+        "date_created": str(datetime.datetime.now())
+    }
+
     return RedirectResponse(url="/landing")
 
 
-# -----------------------------------------
-# LANDING PAGE (requires login)
-# -----------------------------------------
+
 @router.get("/landing", response_class=HTMLResponse)
 async def landing_page(request: Request):
     user = request.session.get("user")
