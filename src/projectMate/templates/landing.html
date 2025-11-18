@@ -20,9 +20,20 @@
             <div class="logo">ProjectMate</div>
             <ul class="nav-links">
                 <li><a href="/">Home</a></li>
-                <li><a href="/upload">Upload</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/about">{{ name }}</a></li>
+                <li><a href="/contact">Contact</a></li>
+
+                <li class="user-menu">
+                    <span class="username" onclick="toggleUserMenu()">
+                        {{ name }} ▼
+                    </span>
+
+                    <div id="userDropdown" class="dropdown">
+                        <a href="/profile">Profile</a>
+                        <a href="/settings">Settings</a>
+                        <a href="/logout" class="logout">Logout</a>
+                    </div>
+                </li>
+
             </ul>
         </nav>
     </header>
@@ -123,4 +134,22 @@ async function deleteProject(id) {
         alert(data.error);
     }
 }
+</script>
+
+
+<script>
+function toggleUserMenu() {
+    const menu = document.getElementById("userDropdown");
+    menu.classList.toggle("open");
+}
+
+// Close menu if user clicks outside
+document.addEventListener("click", function(event) {
+    const menu = document.querySelector(".user-menu");
+    const dropdown = document.getElementById("userDropdown");
+
+    if (!menu.contains(event.target)) {
+        dropdown.classList.remove("open");
+    }
+});
 </script>

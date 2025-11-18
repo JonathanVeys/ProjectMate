@@ -177,3 +177,55 @@ Tile Buttons
 .delete-btn:hover {
     background: #e63939;
 }
+
+/* ---------------------------
+Dropdown menu
+---------------------------  */
+
+.user-menu {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.username {
+    font-weight: 500;
+    color: #333;
+}
+
+/* Dropdown hidden by default */
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 120%;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 0;
+    min-width: 160px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 100;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.dropdown a:hover {
+    background-color: #f5f5f5;
+}
+
+/* When menu is open */
+.dropdown.open {
+    display: block;
+}
+
+.logout {
+    color: #ff4d4d;
+}
+
