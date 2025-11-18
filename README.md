@@ -37,7 +37,5 @@ Whether for dissertations, coding assignments, or group projects, Coursework Cop
 
 ## 🧭 Getting Started
 
-### 1. Clone the repository
-```bash
-git clone https://github.com/JonathanVeys/ProjectMate
-cd ProjectMate
+Visit the webiste at [https://projectmate-hq9q.onrender.com] and try it out.
+
