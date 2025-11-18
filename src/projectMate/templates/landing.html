@@ -38,32 +38,25 @@
         <section>
             <h2>Projects</h2>
             <div class="tiles-container">
-                <a href="/upload" class="tile-link">
-                    <div class="tile">
-                        <h3>Tile Title</h3>
-                        <p>Description text...</p>
-                    </div>
-                </a>
 
-                <a href="/upload" class="tile-link">
+                {% for project in projects %}
                     <div class="tile">
-                        <h3>Another Tile</h3>
-                        <p>A second example tile...</p>
-                    </div>
-                </a>
+                        <h3>{{ project.title }}</h3>
+                        <p>Created: {{ project.created_at_readable }}</p>
 
-                <a href="/upload" class="tile-link">
-                    <div class="tile">
-                        <h3>Third Tile</h3>
-                        <p>Something else....</p>
+                        <div class="tile-buttons">
+                            <a href="/project/{{ project.id }}" class="open-btn">Open</a>
+                            <button class="delete-btn" onclick="deleteProject('{{ project.id }}')">
+                                Delete
+                            </button>
+                        </div>
                     </div>
-                </a>
+                {% endfor %}
 
-                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1" class="tile-link">
-                    <div class="tile">
-                        <h3>Add New Project</h3>
-                    </div>
-                </a>
+                <div class="tile new-project" onclick="createProject()">
+                    <h3>+ New Project</h3>
+                    <p>Create a new coursework project</p>
+                </div>
             </div>
         </section>
 
@@ -83,3 +76,51 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+
+
+<script>
+async function createProject() {
+    const title = prompt("Enter project title:");
+    if (!title) return;
+
+    try {
+        const res = await fetch("/projects/create", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ title })
+        });
+
+        const data = await res.json();
+
+        if (data.success) {
+            window.location.reload();  
+        } else {
+            alert("Error: " + data.error);
+        }
+    } catch (err) {
+        console.error(err);
+        alert("Something went wrong.");
+    }
+}
+</script>
+
+
+
+<script>
+async function deleteProject(id) {
+    if (!confirm("Are you sure you want to delete this project?")) return;
+
+    const res = await fetch(`/projects/delete/${id}`, {
+        method: "DELETE"
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+        window.location.reload();
+    } else {
+        alert(data.error);
+    }
+}
+</script>

@@ -69,22 +69,9 @@ async def auth(request: Request):
         "id": user_row["id"],             
         "email": user_row["email"],
         "name": user_row["name"],
-        "picture_url": user_row["picture_url"],
-        "date_created": str(datetime.datetime.now())
+        "picture_url": user_row["picture_url"]
     }
 
     return RedirectResponse(url="/landing")
 
 
-
-@router.get("/landing", response_class=HTMLResponse)
-async def landing_page(request: Request):
-    user = request.session.get("user")
-
-    if not user:
-        return RedirectResponse(url="/")  # back to login
-
-    return templates.TemplateResponse(
-        "landing.html",
-        {"request": request, "name": user["name"]}
-    )
