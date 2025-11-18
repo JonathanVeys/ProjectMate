@@ -31,7 +31,7 @@ templates = Jinja2Templates(directory="src/projectMate/templates")
 async def home(request: Request):
     return templates.TemplateResponse("login.html", {"request": request})
 
-@app.head("/")
+@app.get("/health")
 async def health_check():
     return {"status": "ok"}
 
