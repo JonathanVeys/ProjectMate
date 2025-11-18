@@ -37,5 +37,5 @@ Whether for dissertations, coding assignments, or group projects, Coursework Cop
 
 ## 🧭 Getting Started
 
-Visit the webiste at [https://projectmate-hq9q.onrender.com] and try it out.
+Visit the webiste at [Project Mate](https://projectmate-hq9q.onrender.com) and try it out.
 
