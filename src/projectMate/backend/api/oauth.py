@@ -75,3 +75,8 @@ async def auth(request: Request):
     return RedirectResponse(url="/landing")
 
 
+#Oauth logout
+@router.get("/logout")
+async def logout(request:Request):
+    request.session.clear()
+    return RedirectResponse(url="/", status_code=302)
