@@ -1,16 +1,39 @@
 from fastapi import APIRouter, File, UploadFile, HTTPException, Request
-from fastapi.responses import RedirectResponse
-from fastapi.templating import Jinja2Templates
-from fastapi.responses import HTMLResponse
 import pdfplumber
 import io
 import docx
+from dotenv import load_dotenv
+from pydantic import BaseModel
+
 
 from src.projectMate.logging import logger
 
 
 router = APIRouter(prefix="/upload", tags=["upload"])
-templates = Jinja2Templates(directory="src/projectMate/templates")
+
+load_dotenv()
+router = APIRouter(prefix="/inference", tags=["inference"])
+
+
+def build_model_prompt(project_spec:str) -> str:
+    model_prompt = f'''
+        Make sure the answer is clean, structured, and readable. Do not omit any key detail and do not infer key facts that are not present.
+
+        Extract all the key information from the following project specifications. Refult VALID JSON and ONLY JSON. Do not include bullet points, prose, or commentary. Make sure the answer is clean, structured, and readable. Do not omit any key detail and do not infer key facts that are not present. Follow the structure below Attribute: Value.
+
+        deadline: The project deadline
+        weighting: percentage of course grade
+        description_short: A short description of the project, max 4,5 sentences.
+        project_plan: A breakdown of steps needed to take to complete the project, each step should include a rough estimation of how long it will take to complete and a date to complete it by, based on the current date and the project deadline.
+        extra: Include any adittional key information about the project like github URL, extension policies, late penalty. You may infer what the attribute name should be for each extra.
+
+        Text to analyse:
+        {project_spec}
+        '''
+    return model_prompt
+
+class ProjectSpecRequest(BaseModel):
+    project_spec:str
 
 def detect_file_type(file: UploadFile) -> str:
     filename = file.filename.lower() #type:ignore
@@ -51,6 +74,7 @@ async def upload_file(file: UploadFile = File(...)):
     else:
         raise HTTPException(status_code=400, detail="Unsupported file type")
 
+
     return {
         "filename": file.filename,
         "type": file_type,
@@ -58,12 +82,3 @@ async def upload_file(file: UploadFile = File(...)):
         "preview": text
     }
 
-
-
-@router.get("/", response_class=HTMLResponse)
-async def upload_page(request: Request):
-    user = request.session.get("user")
-    if not user:
-        return RedirectResponse(url="/auth/")  # force login
-
-    return templates.TemplateResponse("landing.html", {"request": request, "name": user["name"]})

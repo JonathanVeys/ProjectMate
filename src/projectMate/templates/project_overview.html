@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ProjectMate Layout Demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/project.css') }}">
+</head>
+<body>
+
+    <!-- Navigation / Header -->
+    <header>
+        <nav>
+            <div class="logo-area">
+                <span class="app-name">ProjectMate</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/pages/landing">Home</a></li>
+                <li><a href="/contact">Contact</a></li>
+
+                <li class="user-menu">
+                    <span class="username" onclick="toggleUserMenu()">
+                        {{ name }} ▼
+                    </span>
+
+                    <div id="userDropdown" class="dropdown">
+                        <a href="/profile">Profile</a>
+                        <a href="/settings">Settings</a>
+                        <a href="/logout" class="logout">Logout</a>
+                    </div>
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SIDEBAR + MAIN CONTENT WRAPPER -->
+    <div class="layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <a href="#" class="active">Overview</a>
+            <a href="#">Project Spec</a>
+            <a href="#">AI Breakdown</a>
+            <a href="#">Tasks Board</a>
+            <a href="#">Timeline</a>
+            <a href="#">Resources</a>
+            <a href="#">Assistant</a>
+            <a href="#">Submission Checklist</a>
+            <a href="#">Project Settings</a>
+        </aside>
+
+        <!-- MAIN PAGE CONTENT -->
+        <main class="content">
+            <h1>Project: {{ title }}</h1>
+            <p> Description: {{ description }}</p>
+
+            <div class="progress-wrapper">
+                <div class="progress-bar" style="width: 50%;"> Progress 50%</div> 
+            </div>
+            <div class="test-div" style="display: flex; flex-direction: row;">
+                <div class="upcoming" style="flex: 5;">
+                    <h1>Project Breakdown</h1>
+                    <h3>Project Deadline:</h3>
+                    {{ project_spec['deadline'] }}
+                    <h3>Course Weighting</h3>
+                    {{ project_spec['weighting'] }}
+                    <h3>Description</h3>
+                    {{ project_spec['description_short'] }}
+                    <h3>Plan:</h3>
+                    {% for plan in project_spec['project_plan'] %}
+                        <h4>{{ plan['step' ]}}</h4>
+                        {{ plan['description'] }}
+                    {% endfor %}
+                </div>
+                <div style="flex: 2;">
+                    <h1>Upcoming Tasks</h1>
+                    <form action="/action_page.php">
+                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                        <label for="vehicle1"> I have a bike</label><br>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>  
+
+
+
+    
+
+    <!-- Include Javascript -->
+    <script src="{{ url_for('static', path='js/landing.js') }}"></script>
+    <script src="{{ url_for('static', path='js/utils.js') }}"></script>
+</body>
+</html>

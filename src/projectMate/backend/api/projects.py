@@ -1,51 +1,87 @@
-from fastapi import APIRouter, Request
+from typing import Dict, Any, cast
+
+from fastapi import APIRouter, Request, Form, File, UploadFile
 from fastapi.responses import JSONResponse
 
 from .supabase_client import supabase
+from .model_inference import inference
 from ...logging import logger
 
 router = APIRouter(prefix="/projects", tags=["projects"])
 
 @router.post("/create")
-async def create_project(request: Request):
+async def create_project(
+    request: Request,
+    title: str = Form(...),
+    deadline: str = Form(...),
+    description: str = Form(...),
+    spec_file: UploadFile = File(None)
+):
+    '''
+    API endpoint for creating a new project
+    '''
     user = request.session.get("user")
-
-    logger.info(f"[CREATE PROJECT] User session={user}")
-
     if not user:
-        logger.warning("[CREATE PROJECT] Unauthorized access attempt")
-        return JSONResponse({"error": "Not authenticated"}, status_code=401)
+        return {"success": False, "error": "Not authenticated"}
+    
+    contents = await spec_file.read()
+    project_summary = inference(contents)
 
-    body = await request.json()
-    title = body.get("title")
-    description = body.get("description", "")
-
-    if not title:
-        return JSONResponse({"error": "Title is required"}, status_code=400)
-
-    user_id = user["id"]  # Supabase UUID from session
-
+    # 1. Insert the project first
     res = supabase.table("projects").insert({
-        "user_id": user_id,
+        "user_id": user['id'],
         "title": title,
-        "description": description
+        "deadline": deadline,
+        "description": description,
+        "summary_json":project_summary
     }).execute()
 
-    logger.info(f"[CREATE PROJECT] Project created: {res.data}")
+    logger.info("[CREATE PROJECT] Model Inference")
+    project = cast(Dict[str,Any], res.data[0])
+    project_id = project["id"]
 
-    return {"success": True, "project": res.data[0]}
+    # 2. If file uploaded, save it in a folder named after project_id
+    if spec_file:
+        filename = spec_file.filename
+        file_path = f"{project_id}/{filename}"
+
+        supabase.storage.from_("project_spec").upload(
+            file_path,
+            contents,
+            {
+                "content-type": "application/pdf"
+            }
+        )
+
+        # 3. Optionally store file URL/path in the DB
+        supabase.table("projects").update({
+            "spec_path": file_path
+        }).eq("id", project_id).execute()
+
+    return {"success": True}
 
 
 @router.delete("/delete/{project_id}")
 async def delete_project(request: Request, project_id:str):
+    '''
+    API endpoint for deleting a project
+    '''
     user = request.session.get("user")
 
     if not user:
         return JSONResponse({"error":"Not authenticated"}, status_code=401)
     user_id = user["id"]
 
+    #Remove row relating to project
     res = supabase.table("projects").delete().eq("id",project_id).eq("user_id", user_id).execute()
     logger.info(f"[DELETE PROJECT] Project deleted: {res.data}")
+
+    #Remove files relating to project
+    files = supabase.storage.from_("project_spec").list(project_id)
+    file_paths = [f"{project_id}/{file['name']}" for file in files]
+    supabase.storage.from_("project_spec").remove(file_paths)
+    logger.info(f"[DELETE PROJECT] Project Files Deleted {project_id}")
+
 
     if res.data == []:  # nothing was deleted
         return JSONResponse({"error": "Project not found or not yours"}, status_code=404)

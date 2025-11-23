@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{ url_for('static', path='css/landing.css') }}">
 
     <!-- Favicon (optional) -->
-    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/static/img/favicon.ico" type="image/x-icon">
 
 </head>
 <body>
@@ -19,7 +19,7 @@
         <nav>
             <div class="logo">ProjectMate</div>
             <ul class="nav-links">
-                <li><a href="/">Home</a></li>
+                <li><a href="/pages/landing">Home</a></li>
                 <li><a href="/contact">Contact</a></li>
 
                 <li class="user-menu">
@@ -53,10 +53,10 @@
                 {% for project in projects %}
                     <div class="tile">
                         <h3>{{ project.title }}</h3>
-                        <p>Created: {{ project.created_at_readable }}</p>
+                        <p>Deadline: {{ project.deadline_at_readable }}</p>
 
                         <div class="tile-buttons">
-                            <a href="/project/{{ project.id }}" class="open-btn">Open</a>
+                            <a href="/pages/projects/{{ project.id }}" class="open-btn">Open</a>
                             <button class="delete-btn" onclick="deleteProject('{{ project.id }}')">
                                 Delete
                             </button>
@@ -64,7 +64,7 @@
                     </div>
                 {% endfor %}
 
-                <div class="tile new-project" onclick="createProject()">
+                <div class="tile new-project" onclick="openModal()">
                     <h3>+ New Project</h3>
                     <p>Create a new coursework project</p>
                 </div>
@@ -84,9 +84,36 @@
     </footer>
 
     <!-- Link to your JavaScript file (you can fill this later) -->
-    <script src="script.js"></script>
     <script src="{{ url_for('static', path='js/landing.js') }}"></script>
+    <script src="{{ url_for('static', path='js/utils.js') }}"></script>
+
+    <!-- Modal -->
+    <div id="newProjectModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Create New Project</h2>
+                <form id="projectForm" onsubmit="submitProjectForm(event)" enctype="multipart/form-data">
+                    
+                    <!-- Basic fields -->
+                    <input type="text" name="title" placeholder="Project Title" required>
+                    <input type="date" name="deadline" placeholder="Project Deadline" required>
+                    <input type="text" name="description" placeholder="Project Description" required>
+
+                    <!-- File upload -->
+                    <input type="file" name="spec_file" id="specFile" class="hidden-file-input">
+                    
+                    <!-- Form buttons -->
+                    <div class="form-button-row">
+                        <button type="submit">Create</button>
+                        <button class="close-btn" onclick="closeModal()">Close</button>
+                </div> 
+            </form>
+        </div>
+    </div>
+
+    <div id="loading-overlay" class="hidden-loading">
+        <div class="spinner"></div>
+        <p>Creating project…</p>
+    </div>
+
 </body>
 </html>
-
-

@@ -1,28 +1,3 @@
-// Function to create a new project
-async function createProject() {
-    const title = prompt("Enter project title:");
-    if (!title) return;
-
-    try {
-        const res = await fetch("/projects/create", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ title })
-        });
-
-        const data = await res.json();
-
-        if (data.success) {
-            window.location.reload();  
-        } else {
-            alert("Error: " + data.error);
-        }
-    } catch (err) {
-        console.error(err);
-        alert("Something went wrong.");
-    }
-}
-
 // Function to delete a project
 async function deleteProject(id) {
     if (!confirm("Are you sure you want to delete this project?")) return;
@@ -40,18 +15,66 @@ async function deleteProject(id) {
     }
 }
 
-// Function to handle menu bar
-function toggleUserMenu() {
-    const menu = document.getElementById("userDropdown");
-    menu.classList.toggle("open");
+
+// Open model
+function openModal() {
+    document.getElementById("newProjectModal").classList.remove("hidden");
 }
 
-// Close menu if user clicks outside
-document.addEventListener("click", function(event) {
-    const menu = document.querySelector(".user-menu");
-    const dropdown = document.getElementById("userDropdown");
+function closeModal() {
+    document.getElementById("newProjectModal").classList.add("hidden");
+}
 
-    if (!menu.contains(event.target)) {
-        dropdown.classList.remove("open");
+// async function submitProjectForm(event) {
+//     event.preventDefault();
+
+//     const form = event.target;
+//     const formData = new FormData(form);
+
+//     const response = await fetch("/projects/create", {
+//         method: "POST",
+//         body: formData
+//     });
+
+//     const data = await response.json();
+
+//     closeModal()
+//     if (data.success) {
+//         location.reload();
+//     } else {
+//         alert("Error creating project");
+//     }
+// }
+
+async function submitProjectForm(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    // Show spinner
+    document.getElementById("loading-overlay").classList.remove("hidden-loading");
+
+    try {
+        const response = await fetch("/projects/create", {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await response.json();
+
+        closeModal();
+
+        if (data.success) {
+            location.reload();
+        } else {
+            alert("Error creating project");
+        }
+    } catch (err) {
+        console.error(err);
+        alert("Unexpected error");
+    } finally {
+        // Hide spinner after everything completes
+        document.getElementById("loading-overlay").classList.add("hidden-loading");
     }
-});
+}

@@ -1,5 +1,5 @@
 import datetime
-from typing import Dict, Any
+from typing import Dict, Any, cast
 
 from fastapi import APIRouter, Request
 from fastapi.responses import RedirectResponse, HTMLResponse
@@ -14,7 +14,7 @@ router = APIRouter()
 templates = Jinja2Templates(directory="src/projectMate/templates")
 
 config = Config(".env")
-oauth = OAuth(config)
+oauth: OAuth = OAuth(config)
 
 oauth.register(
     name="google",
@@ -36,14 +36,14 @@ async def show_login(request: Request):
 async def login(request: Request):
     redirect_uri = request.url_for("auth")
     print("REDIRECT URI:", redirect_uri)  # DEBUG: MUST MATCH GOOGLE CONSOLE
-    return await oauth.google.authorize_redirect(request, redirect_uri)
+    return await oauth.google.authorize_redirect(request, redirect_uri) #type:ignore
 
 
 # OAUTH CALLBACK
 @router.get("/auth")
 async def auth(request: Request):
     user_row: Dict[str, Any]
-    token = await oauth.google.authorize_access_token(request)
+    token = await oauth.google.authorize_access_token(request) #type:ignore
     user_info = token["userinfo"]
 
     email = user_info["email"]
@@ -61,9 +61,9 @@ async def auth(request: Request):
             "date_created": str(datetime.datetime.now())
         }).execute()
 
-        user_row = insert_res.data[0]
+        user_row = cast(Dict[str, Any], insert_res.data[0])
     else:
-        user_row = user_data[0]
+        user_row = cast(Dict[str, Any], user_data[0])
     
     request.session["user"] = {
         "id": user_row["id"],             
@@ -72,7 +72,7 @@ async def auth(request: Request):
         "picture_url": user_row["picture_url"]
     }
 
-    return RedirectResponse(url="/landing")
+    return RedirectResponse(url="/pages/landing")
 
 
 #Oauth logout
