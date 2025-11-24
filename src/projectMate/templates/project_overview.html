@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ProjectMate Layout Demo</title>
+    <title>ProjectMate - {{ title }}</title>
     <link rel="stylesheet" href="{{ url_for('static', path='css/project.css') }}">
 </head>
 <body>
@@ -55,7 +55,7 @@
             <p> Description: {{ description }}</p>
 
             <div class="progress-wrapper">
-                <div class="progress-bar" style="width: 50%;"> Progress 50%</div> 
+                <div class="progress-bar" id="progress-bar" style="width: {{ progress }}%;"> {{ progress }}%</div> 
             </div>
             <div class="test-div" style="display: flex; flex-direction: row;">
                 <div class="upcoming" style="flex: 5;">
@@ -66,17 +66,27 @@
                     {{ project_spec['weighting'] }}
                     <h3>Description</h3>
                     {{ project_spec['description_short'] }}
-                    <h3>Plan:</h3>
-                    {% for plan in project_spec['project_plan'] %}
-                        <h4>{{ plan['step' ]}}</h4>
-                        {{ plan['description'] }}
-                    {% endfor %}
                 </div>
                 <div style="flex: 2;">
                     <h1>Upcoming Tasks</h1>
                     <form action="/action_page.php">
-                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                        <label for="vehicle1"> I have a bike</label><br>
+                        <!-- {% for plan in project_spec['project_plan'] %}
+                            <input type="checkbox" id="checkbox" name="checkbox" value="task">
+                            <label>{{ plan['step'] }} — Estimated completion time: {{ plan['estimated_hours'] }} hours</label><br>
+                        {% endfor %} -->
+                        {% for task in tasks %}
+                            <input 
+                                type="checkbox" 
+                                class="task-checkbox"
+                                data-task-id="{{ task['id'] }}"
+                                id="task-{{ task['task_index'] }}"
+                                name="tasks"
+                                value="{{ task['task_index'] }}"
+                                {% if task['completed'] %}checked{% endif %}
+                            >
+                            <label>{{ project_spec['project_plan'][task['task_index']]['step'] }}</label>
+                            <br>
+                        {% endfor %}
                     </form>
                 </div>
             </div>
@@ -88,7 +98,7 @@
     
 
     <!-- Include Javascript -->
-    <script src="{{ url_for('static', path='js/landing.js') }}"></script>
+    <script src="{{ url_for('static', path='js/project_overview.js') }}"></script>
     <script src="{{ url_for('static', path='js/utils.js') }}"></script>
 </body>
 </html>

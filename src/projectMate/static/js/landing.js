@@ -25,26 +25,6 @@ function closeModal() {
     document.getElementById("newProjectModal").classList.add("hidden");
 }
 
-// async function submitProjectForm(event) {
-//     event.preventDefault();
-
-//     const form = event.target;
-//     const formData = new FormData(form);
-
-//     const response = await fetch("/projects/create", {
-//         method: "POST",
-//         body: formData
-//     });
-
-//     const data = await response.json();
-
-//     closeModal()
-//     if (data.success) {
-//         location.reload();
-//     } else {
-//         alert("Error creating project");
-//     }
-// }
 
 async function submitProjectForm(event) {
     event.preventDefault();

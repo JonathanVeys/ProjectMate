@@ -5,6 +5,7 @@ import os
 import pdfplumber
 import io
 import json, json5, re
+from datetime import datetime
 
 load_dotenv()
 router = APIRouter(prefix="/inference", tags=["inference"])
@@ -15,6 +16,7 @@ def build_model_prompt(project_spec:str) -> str:
     
     '''
     model_prompt = f'''
+        Todays date = {datetime.now()}
         Make sure the answer is clean, structured, and readable. Do not omit any key detail and do not infer key facts that are not present.
 
         Extract all the key information from the following project specifications. Refult VALID JSON and ONLY JSON. Do not include bullet points, prose, or commentary. Make sure the answer is clean, structured, and readable. Do not omit any key detail and do not infer key facts that are not present. Follow the structure below Attribute: Value.
@@ -22,7 +24,7 @@ def build_model_prompt(project_spec:str) -> str:
         deadline: The project deadline
         weighting: percentage of course grade
         description_short: A short description of the project, max 4,5 sentences.
-        project_plan: A breakdown of steps needed to take to complete the project, each step should include a rough estimation of how long it will take to complete and a date to complete it by, based on the current date and the project deadline.
+        project_plan: A breakdown of steps needed to take to complete the project, each step should be small and managable, each step should include a rough estimation of how long it will take to complete once started in hours and a date to complete it by, based on the current date and the project deadline.
         extra: Include any adittional key information about the project like github URL, extension policies, late penalty. You may infer what the attribute name should be for each extra.
 
         Text to analyse:

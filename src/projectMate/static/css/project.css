@@ -197,6 +197,7 @@ hr {
     background: #e6e6e6;
     border-radius: 10px;
     overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
 }
 
 /* Filled portion */
@@ -212,5 +213,8 @@ hr {
     font-size: 0.85rem;
     font-weight: 500;
     
-    padding-left: 6px;            /* avoids text hugging the very start */
+    /* padding-left: 6px;            avoids text hugging the very start */
+    transition: width 500ms ease-in-out;
 }
+
+

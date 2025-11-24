@@ -1,5 +1,6 @@
 import datetime
 from typing import Dict, Any, cast
+import os
 
 from fastapi import APIRouter, Request
 from fastapi.responses import RedirectResponse, HTMLResponse
@@ -49,6 +50,8 @@ async def auth(request: Request):
     email = user_info["email"]
     name = user_info.get("name", "")
     avatar_url = user_info.get("picture", "")
+
+
 
     response = supabase.table("profiles").select("*").eq("email", email).execute()
     user_data = response.data

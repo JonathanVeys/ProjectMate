@@ -41,18 +41,11 @@ async def project_page(request: Request, project_id: str):
     if not user:
         return RedirectResponse(url="/login")
     
-    res = supabase.table("projects").select("*").eq("id", project_id).execute()
-    project = cast(Dict[str, Any], res.data[0])
+    res_project = supabase.table("projects").select("*").eq("id", project_id).execute()
+    project = cast(Dict[str, Any], res_project.data[0])
     
-    spec_path = project["spec_path"]  # e.g. "project-id/file.pdf"
-
-    # Generate a signed URL (valid for 1 hour)
-    signed = supabase.storage.from_("project_spec").create_signed_url(
-        spec_path,
-        60 * 60 
-    )
-
-    signed_url = signed.get("signedURL") or signed.get("signed_url")
+    res_tasks = supabase.table("task_progress").select("*").eq("project_id", project_id).execute().data
+    proportion_completed = round(sum(1 for t in res_tasks if t['completed']==True)/len(res_tasks)*100, 1)
 
     return templates.TemplateResponse(
         "project_overview.html",
@@ -62,7 +55,8 @@ async def project_page(request: Request, project_id: str):
             "title":project["title"],
             "description":project["description"],
             "spec_path":project["spec_path"],
-            "spec_url":signed_url,
-            "project_spec":project["summary_json"]
+            "project_spec":project["summary_json"],
+            "tasks":res_tasks,
+            "progress":proportion_completed
         }
     )

@@ -25,7 +25,7 @@ async def create_project(
         return {"success": False, "error": "Not authenticated"}
     
     contents = await spec_file.read()
-    project_summary = inference(contents)
+    project_summary = cast(Dict[str, Any], inference(contents))
 
     # 1. Insert the project first
     res = supabase.table("projects").insert({
@@ -57,6 +57,13 @@ async def create_project(
         supabase.table("projects").update({
             "spec_path": file_path
         }).eq("id", project_id).execute()
+
+    for i, task in enumerate(project_summary['project_plan']):
+        supabase.table("task_progress").insert({
+            "project_id": project_id,
+            "task_index": i,
+            "completed": False
+        }).execute()
 
     return {"success": True}
 
