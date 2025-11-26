@@ -1,10 +1,12 @@
 from typing import Dict, Any, cast
+import json
 
 from fastapi import APIRouter, Request, Form, File, UploadFile
 from fastapi.responses import JSONResponse
+import uuid
 
 from .supabase_client import supabase
-from .model_inference import inference
+from .model_inference import inference, build_summary_prompt, extract_text_from_pdf, parse_llm_json
 from ...logging import logger
 
 router = APIRouter(prefix="/projects", tags=["projects"])
@@ -25,7 +27,13 @@ async def create_project(
         return {"success": False, "error": "Not authenticated"}
     
     contents = await spec_file.read()
-    project_summary = cast(Dict[str, Any], inference(contents))
+    raw_text = extract_text_from_pdf(contents)
+    model_prompt = build_summary_prompt(raw_text)
+    project_summary = inference(model_prompt)
+    project_summary = parse_llm_json(project_summary)
+
+    for task in project_summary["tasks"]:  #type:ignore
+        task["id"] = str(uuid.uuid4())
 
     # 1. Insert the project first
     res = supabase.table("projects").insert({
@@ -58,8 +66,9 @@ async def create_project(
             "spec_path": file_path
         }).eq("id", project_id).execute()
 
-    for i, task in enumerate(project_summary['project_plan']):
+    for i, task in enumerate(project_summary['tasks']):     #type:ignore 
         supabase.table("task_progress").insert({
+            "id": task["id"],
             "project_id": project_id,
             "task_index": i,
             "completed": False

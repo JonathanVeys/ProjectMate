@@ -1,9 +1,25 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: white;
-    text-align: center;
-    padding-top: 80px;
+  margin: 0;
+  padding: 0;
+
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;   /* switch from center → top */
+  
+  padding-top: 80px;         /* adjust this value to taste */
+  
+  background: linear-gradient(
+    135deg,
+    #f6f9ff 0%,
+    #e9f0ff 50%,
+    #f5f8ff 100%
+  );
+
+  font-family: Inter, Arial, sans-serif;
 }
+
 
 .container {
     max-width: 400px;
@@ -11,17 +27,119 @@ body {
 }
 
 .logo {
-    width: 150px;
-    margin-bottom: 20px;
-}
-
-.login-btn {
-    display: inline-block;
-    padding: 12px 20px;
-    background-color: #6C63FF;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
+  width: 110px;        /* adjust based on your design */
+  display: block;
+  margin: 0 auto;     /* centers the image horizontally */
+  margin-bottom: 20px;
 }
 
 
+/*--------------------------------
+GOOGLE BUTTON
+--------------------------------*/
+
+.auth-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+/* Base button styling */
+.auth-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  padding: 12px 20px;
+  border-radius: 30px;
+
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+
+  transition: 
+    box-shadow 0.25s ease,
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+
+  border: 1px solid transparent;
+}
+
+/* Icon styling */
+.auth-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Hover + press interactions */
+.auth-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.auth-btn:active {
+  transform: translateY(0px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* --- PROVIDER STYLES --- */
+
+/* Google button */
+.google {
+  background: #FFFFFF;
+  color: #444;
+  border: 1px solid #DADCE0;
+}
+
+/* Slight light-gray hover tint */
+.google:hover {
+  background-color: #f8f9fa;
+  border-color: #c6c6c6;
+}
+
+/* GitHub */
+.github {
+  background: #24292e;
+  color: white;
+}
+
+.github:hover {
+  background: #2f363d;
+}
+
+/* Apple */
+.apple {
+  background: #000;
+  color: white;
+}
+
+.apple:hover {
+  background: #111;
+}
+
+
+
+/* 
+LOGIN CARD
+*/
+
+
+.login-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 30px;
+    border: 1px solid lightgray;
+    text-align: center;
+}
+
+h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+  color: #1a1a1a;
+}

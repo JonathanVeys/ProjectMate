@@ -39,26 +39,40 @@
         <!-- SIDEBAR -->
         <aside class="sidebar">
             <a href="#" class="active">Overview</a>
-            <a href="#">Project Spec</a>
-            <a href="#">AI Breakdown</a>
-            <a href="#">Tasks Board</a>
-            <a href="#">Timeline</a>
-            <a href="#">Resources</a>
-            <a href="#">Assistant</a>
-            <a href="#">Submission Checklist</a>
-            <a href="#">Project Settings</a>
         </aside>
 
         <!-- MAIN PAGE CONTENT -->
         <main class="content">
             <h1>Project: {{ title }}</h1>
-            <p> Description: {{ description }}</p>
-
+            <p class="project-meta">
+                Due in 10 days | Weighting 50% | On track
+            </p>
             <div class="progress-wrapper">
                 <div class="progress-bar" id="progress-bar" style="width: {{ progress }}%;"> {{ progress }}%</div> 
             </div>
-            <div class="test-div" style="display: flex; flex-direction: row;">
-                <div class="upcoming" style="flex: 5;">
+
+            <hr style="color: gray;">
+            
+            <div class="test-div" style="display: flex; flex-direction: row; flex: 7;">
+                <div class="upcoming" style="flex: 5; display: flex; flex-direction: column;">
+                    
+                    <div style="display:flex; gap: 12px; width:100%;">
+                        <div class="stat-card">
+                            <div class="stat-title">Tasks Completed</div>
+                            <div class="stat-value">16/20</div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-title">Time Remaining</div>
+                            <div class="stat-value">10 Days</div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-title">Estimated Remaining Effort</div>
+                            <div class="stat-value">6.5 Hours</div>
+                        </div>
+                    </div>
+
                     <h1>Project Breakdown</h1>
                     <h3>Project Deadline:</h3>
                     {{ project_spec['deadline'] }}
@@ -70,10 +84,6 @@
                 <div style="flex: 2;">
                     <h1>Upcoming Tasks</h1>
                     <form action="/action_page.php">
-                        <!-- {% for plan in project_spec['project_plan'] %}
-                            <input type="checkbox" id="checkbox" name="checkbox" value="task">
-                            <label>{{ plan['step'] }} — Estimated completion time: {{ plan['estimated_hours'] }} hours</label><br>
-                        {% endfor %} -->
                         {% for task in tasks %}
                             <input 
                                 type="checkbox" 
@@ -84,7 +94,7 @@
                                 value="{{ task['task_index'] }}"
                                 {% if task['completed'] %}checked{% endif %}
                             >
-                            <label>{{ project_spec['project_plan'][task['task_index']]['step'] }}</label>
+                            <label>{{ project_spec['tasks'][task['task_index']]['task'] }}</label>
                             <br>
                         {% endfor %}
                     </form>
@@ -92,6 +102,10 @@
             </div>
         </main>
     </div>  
+
+    <footer>
+        <p>© 2025 ProjectMate. All rights reserved.</p>
+    </footer>
 
 
 

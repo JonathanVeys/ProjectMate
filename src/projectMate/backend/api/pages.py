@@ -46,7 +46,7 @@ async def project_page(request: Request, project_id: str):
     
     res_tasks = supabase.table("task_progress").select("*").eq("project_id", project_id).execute().data
     proportion_completed = round(sum(1 for t in res_tasks if t['completed']==True)/len(res_tasks)*100, 1)
-
+    
     return templates.TemplateResponse(
         "project_overview.html",
         {

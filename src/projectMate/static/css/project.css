@@ -1,48 +1,58 @@
-/* ------------------------------------------------------
+/* ======================================================
    VARIABLES
-------------------------------------------------------- */
+====================================================== */
 :root {
     --header-height: 60px;
     --sidebar-width: 180px;
+
     --bg-light: #f8f9fa;
     --text-dark: #333;
+
     --border-light: #e5e5e5;
     --sidebar-bg: #f1f1f1;
+
+    --content-padding: 30px;
+    --spacing-sm: 6px;
+    --spacing-md: 12px;
+    --spacing-lg: 20px;
 }
 
-/* ------------------------------------------------------
+/* ======================================================
    GLOBAL BASE
-------------------------------------------------------- */
+====================================================== */
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Inter', Arial, sans-serif;
     background: var(--bg-light);
     color: var(--text-dark);
-    font-family: 'Inter', Arial, sans-serif;
     line-height: 1.6;
-    padding-top: var(--header-height); /* offset for header */
+
+    /* offset content so header doesn't overlap */
+    padding-top: var(--header-height);
 }
 
-/* ------------------------------------------------------
+/* ======================================================
    HEADER / NAV
-------------------------------------------------------- */
+====================================================== */
 header {
-    height: var(--header-height);
-    background: white;
-    border-bottom: 1px solid var(--border-light);
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 200;
 
+    height: var(--header-height);
+    background: white;
+    border-bottom: 1px solid var(--border-light);
+
     display: flex;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 var(--spacing-lg);
     box-sizing: border-box;
 }
 
 nav {
-    max-width: 1200px;
     width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
 
     display: flex;
@@ -58,18 +68,17 @@ nav a {
 
 .nav-links {
     display: flex;
-    list-style: none;
     gap: 20px;
-    padding: 0;
+    list-style: none;
     margin: 0;
+    padding: 0;
 }
 
-/* ------------------------------------------------------
-   DROPDOWN HIDDEN BY DEFAULT
-------------------------------------------------------- */
+/* ======================================================
+   DROPDOWN
+====================================================== */
 .user-menu {
     position: relative;
-    display: inline-block;
     cursor: pointer;
 }
 
@@ -84,12 +93,18 @@ nav a {
     right: 0;
     top: 120%;
     background: white;
+
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 10px 0;
     min-width: 160px;
+
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     z-index: 100;
+}
+
+.dropdown.open {
+    display: block;
 }
 
 .dropdown a {
@@ -101,45 +116,35 @@ nav a {
 }
 
 .dropdown a:hover {
-    background-color: #f5f5f5;
-}
-
-/* When menu is open */
-.dropdown.open {
-    display: block;
+    background: #f5f5f5;
 }
 
 .logout {
     color: #ff4d4d;
 }
 
-/* ------------------------------------------------------
-   PAGE LAYOUT
-------------------------------------------------------- */
-.layout {
-    display: flex;
-    flex-direction: column;
-}
-
-/* ------------------------------------------------------
+/* ======================================================
    SIDEBAR
-------------------------------------------------------- */
+====================================================== */
 .sidebar {
     position: fixed;
     top: var(--header-height);
     left: 0;
+
     width: var(--sidebar-width);
     height: calc(100vh - var(--header-height));
-    background: var(--sidebar-bg);
-    overflow-y: auto;
     padding: 10px 0;
-    box-sizing: border-box;
+
+    background: var(--sidebar-bg);
     border-right: 1px solid var(--border-light);
+    overflow-y: auto;
+    box-sizing: border-box;
 }
 
 .sidebar-section {
     padding: 10px 16px 5px;
     margin: 0;
+
     font-size: 0.9rem;
     font-weight: 600;
     color: #444;
@@ -149,6 +154,7 @@ nav a {
 .sidebar a {
     display: block;
     padding: 12px 16px;
+
     text-decoration: none;
     color: #000;
     font-size: 0.95rem;
@@ -163,58 +169,116 @@ nav a {
     color: white;
 }
 
-hr {
-    border: none;
-    border-bottom: 1px solid #ccc;
-    margin: 15px 0;
-}
-
-/* ------------------------------------------------------
+/* ======================================================
    MAIN CONTENT
-------------------------------------------------------- */
+====================================================== */
 .content {
     margin-left: var(--sidebar-width);
-    padding: 30px;
+    padding: var(--content-padding);
+    box-sizing: border-box;
     flex-grow: 1;
 }
 
 .content h1 {
-    margin-top: 10px;
+    margin: 0 0 var(--spacing-sm) 0; /* clean spacing */
 }
 
-.page-div {
-    display: flex;
-    border: 2px solid green;
+/* reusable spacing class (optional) */
+.section-spacer {
+    margin-bottom: var(--spacing-md);
 }
 
-/* ------------------------------------------------------
+/* ======================================================
    PROGRESS BAR
-------------------------------------------------------- */
-
+====================================================== */
 .progress-wrapper {
     width: 100%;
     height: 25px;
     background: #e6e6e6;
     border-radius: 10px;
     overflow: hidden;
+
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+    margin: var(--spacing-md) 0;
 }
 
-/* Filled portion */
 .progress-bar {
     height: 100%;
     background: #04AA6D;
-    
-    display: flex;                /* enable centering */
-    justify-content: center;      /* horizontal center */
-    align-items: center;          /* vertical center */
 
-    color: white;                 /* text readable */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
     font-size: 0.85rem;
     font-weight: 500;
-    
-    /* padding-left: 6px;            avoids text hugging the very start */
+
     transition: width 500ms ease-in-out;
 }
 
+
+.project-meta {
+    margin-top: 2px;      /* very small gap */
+    margin-bottom: 10px;  /* small gap before the progress bar */
+    font-size: 0.9rem;
+    line-height: 1.2;
+    color: gray;
+}
+
+
+/* ======================================================
+   PROGRESS TILES
+====================================================== */
+
+@keyframes vibrate {
+    0% { transform: translate(0); }
+    20% { transform: translate(-1px, 1px); }
+    40% { transform: translate(-1px, -1px); }
+    60% { transform: translate(1px, 1px); }
+    80% { transform: translate(1px, -1px); }
+    100% { transform: translate(0); }
+}
+
+
+.stat-card {
+    flex: 1;
+
+    /* Layout / spacing */
+    padding: 16px 20px;
+    margin: 0 8px;
+
+    /* Visual styling */
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+
+    /* Typography */
+    font-size: 0.95rem;
+    line-height: 1.3;
+    color: #333;
+
+    /* Animation (optional subtle hover) */
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+    /* animation: vibrate 0.2s infinite linear; */
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+}
+
+.stat-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 4px;
+}
+
+.stat-value {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #222;
+}
 
