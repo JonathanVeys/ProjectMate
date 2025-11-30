@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>ProjectMate - {{ title }}</title>
     <link rel="stylesheet" href="{{ url_for('static', path='css/project.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', path='img/favicon.ico') }}">
 </head>
 <body>
 
@@ -39,13 +40,14 @@
         <!-- SIDEBAR -->
         <aside class="sidebar">
             <a href="#" class="active">Overview</a>
+            <a href="/pages/tasks/{{ project_id }}" class=""> Tasks</a>
         </aside>
 
         <!-- MAIN PAGE CONTENT -->
         <main class="content">
             <h1>Project: {{ title }}</h1>
             <p class="project-meta">
-                Due in 10 days | Weighting 50% | On track
+                Due in {{ days_remaining }} days | Weighting 50% | On track
             </p>
             <div class="progress-wrapper">
                 <div class="progress-bar" id="progress-bar" style="width: {{ progress }}%;"> {{ progress }}%</div> 
@@ -54,34 +56,40 @@
             <hr style="color: gray;">
             
             <div class="test-div" style="display: flex; flex-direction: row; flex: 7;">
-                <div class="upcoming" style="flex: 5; display: flex; flex-direction: column;">
+                <div class="container hero">
                     
-                    <div style="display:flex; gap: 12px; width:100%;">
+                    <div class="container tiles">
                         <div class="stat-card">
                             <div class="stat-title">Tasks Completed</div>
-                            <div class="stat-value">16/20</div>
+                            <div class="stat-value"  id="completed-tasks-display">{{ (progress*total_number_tasks/100) | round | int }}/{{ total_number_tasks }}</div>
                         </div>
 
-                        <div class="stat-card">
-                            <div class="stat-title">Time Remaining</div>
-                            <div class="stat-value">10 Days</div>
+                        <div class="stat-card" id="deadline-tile">
+                            <div class="stat-title">Days Remaining</div>
+                            <div class="stat-value" id="days-remaining-val"> {{ days_remaining }}</div>
                         </div>
 
                         <div class="stat-card">
                             <div class="stat-title">Estimated Remaining Effort</div>
-                            <div class="stat-value">6.5 Hours</div>
+                            <div class="stat-value">{{ remaining_effort }} Hours</div>
                         </div>
                     </div>
+                    <div class="container breakdown">
+                        <h1>Project Breakdown</h1>
+                        <div class="info-row">
+                            <h3 class="label">Project Deadline:</h3>
+                            <span class="value">{{ project_spec['deadline'] }}</span>
+                        </div>
 
-                    <h1>Project Breakdown</h1>
-                    <h3>Project Deadline:</h3>
-                    {{ project_spec['deadline'] }}
-                    <h3>Course Weighting</h3>
-                    {{ project_spec['weighting'] }}
-                    <h3>Description</h3>
-                    {{ project_spec['description_short'] }}
+                        <div class="info-row">
+                            <h3 class="label">Course Weighting:</h3>
+                            <span class="value">{{ project_spec['weighting'] }}</span>
+                        </div>
+                        <h3>Description</h3>
+                        {{ project_spec['description_short'] }}
+                    </div>
                 </div>
-                <div style="flex: 2;">
+                <div class="container tasks">
                     <h1>Upcoming Tasks</h1>
                     <form action="/action_page.php">
                         {% for task in tasks %}

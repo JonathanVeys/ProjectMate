@@ -120,6 +120,19 @@ GOOGLE BUTTON
   background: #111;
 }
 
+/* Microsoft button */
+.microsoft {
+  background: #FFFFFF;
+  color: #444;
+  border: 1px solid #DADCE0;
+}
+
+/* Slight light-gray hover tint */
+.microsoft:hover {
+  background-color: #f8f9fa;
+  border-color: #c6c6c6;
+}
+
 
 
 /* 

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ProjectMate - {{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/project.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/tasks.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', path='img/favicon.ico') }}">
+</head>
+<body>
+
+    <!-- Navigation / Header -->
+    <header>
+        <nav>
+            <div class="logo-area">
+                <span class="app-name">ProjectMate</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/pages/landing">Home</a></li>
+                <li><a href="/contact">Contact</a></li>
+
+                <li class="user-menu">
+                    <span class="username" onclick="toggleUserMenu()">
+                        {{ name }} ▼
+                    </span>
+
+                    <div id="userDropdown" class="dropdown">
+                        <a href="/profile">Profile</a>
+                        <a href="/settings">Settings</a>
+                        <a href="/logout" class="logout">Logout</a>
+                    </div>
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <div class="layout">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <a href="/pages/projects/{{ project_id }}" class="">Overview</a>
+            <a href="/pages/tasks/{{ project_id }}" class="active"> Tasks</a>
+        </aside>
+
+        <main class="content">
+            <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
+                <div>
+                    <h1>Tasks</h1>  
+                </div>
+               <button id="editTasksBtn" class="edit-btn">Edit Tasks</button>
+            </div>
+
+            <div class="kanban-board">
+
+                <div class="kanban-column" data-status="todo">
+                    <h2>❌ To Do</h2>
+                    <div class="kanban-separator"></div>
+                    <div class="kanban-list" id="todo-list">
+                        {% for task in project_summary["tasks"] if not completed_lookup.get(task.id) %}
+                            <div class="kanban-card" draggable="true" data-id="{{ task.id }}">
+                                {{ task.task }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="kanban-column" data-status="in_progress">
+                    <h2>⚠️ In Progress</h2>
+                    <div class="kanban-separator"></div>
+                    <div class="kanban-list" id="progress-list">
+                        {% for task in tasks if task.status == "in_progress" %}
+                            <div class="kanban-card" draggable="true" data-id="{{ task.id }}">
+                                {{ task.task }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="kanban-column" data-status="done">
+                    <h2>✅ Done</h2>
+                    <div class="kanban-separator"></div>
+                    <div class="kanban-list" id="done-list">
+                        {% for task in project_summary["tasks"] if completed_lookup.get(task.id) %}
+                            <div class="kanban-card" draggable="true" data-id="{{ task.id }}">
+                                <div class="task-title">{{ task.task }}</div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+
+    <footer>
+        <p>© 2025 ProjectMate. All rights reserved.</p>
+    </footer>
+
+    <div id="taskEditModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Tasks</h2>
+                <button class="modal-close" id="taskModalClose">×</button>
+            </div>
+
+            <div class="modal-body" id="task-edit-body">
+            </div>
+
+            <div class="modal-footer">
+                <button class="save-btn" id="saveTasksBtn">Save Changes</button>
+                <button class="cancel-btn" id="cancelEditBtn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.allTasks = {{ tasks | tojson }};
+    </script>
+
+    <!-- Include Javascript -->
+    <script src="{{ url_for('static', path='js/tasks.js') }}"></script>
+    <script src="{{ url_for('static', path='js/utils.js') }}"></script>
+</body>
+</html>

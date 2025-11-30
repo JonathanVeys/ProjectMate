@@ -25,24 +25,38 @@ oauth.register(
     client_kwargs={"scope": "openid email profile"},
 )
 
+oauth.register(
+    name="github",
+    client_id=config("GITHUB_CLIENT_ID"),
+    client_secret=config("GITHUB_CLIENT_SECRET"),
+    access_token_url="https://github.com/login/oauth/access_token",
+    authorize_url="https://github.com/login/oauth/authorize",
+    api_base_url="https://api.github.com/",
+    client_kwargs={"scope": "read:user user:email"},
+)
 
-# LOGIN PAGE (shows "Login with Google")
+
 @router.get("/", response_class=HTMLResponse)
 async def show_login(request: Request):
     return templates.TemplateResponse("login.html", {"request": request})
 
 
-# START OAUTH LOGIN
-@router.get("/login")
-async def login(request: Request):
-    redirect_uri = request.url_for("auth")
+@router.get("/login/google")
+async def login_google(request: Request):
+    redirect_uri = request.url_for("auth_google")
     print("REDIRECT URI:", redirect_uri)  # DEBUG: MUST MATCH GOOGLE CONSOLE
     return await oauth.google.authorize_redirect(request, redirect_uri) #type:ignore
 
+@router.get("/login/github")
+async def login_github(request: Request):
+    redirect_uri = request.url_for("auth_github")
+    return await oauth.github.authorize_redirect(request, redirect_uri) #type:ignore
 
-# OAUTH CALLBACK
-@router.get("/auth")
-async def auth(request: Request):
+
+@router.get("/auth/google")
+async def auth_google(request: Request):
+    '''
+    '''
     user_row: Dict[str, Any]
     token = await oauth.google.authorize_access_token(request) #type:ignore
     user_info = token["userinfo"]
@@ -50,8 +64,6 @@ async def auth(request: Request):
     email = user_info["email"]
     name = user_info.get("name", "")
     avatar_url = user_info.get("picture", "")
-
-
 
     response = supabase.table("profiles").select("*").eq("email", email).execute()
     user_data = response.data
@@ -70,6 +82,60 @@ async def auth(request: Request):
     
     request.session["user"] = {
         "id": user_row["id"],             
+        "email": user_row["email"],
+        "name": user_row["name"],
+        "picture_url": user_row["picture_url"]
+    }
+
+    return RedirectResponse(url="/pages/landing")
+
+@router.get("/auth/github")
+async def auth_github(request:Request):
+    '''
+    '''
+    token = await oauth.github.authorize_access_token(request) #type:ignore
+
+    # Get main user object
+    user_resp = await oauth.github.get("user", token=token)
+    user_info = user_resp.json()
+
+    # GitHub may not include email, so fetch separately
+    email_resp = await oauth.github.get("user/emails", token=token)
+    emails = email_resp.json()
+
+    email = None
+    for e in emails:
+        if e.get("primary") and e.get("verified"):
+            email = e["email"]
+            break
+
+    # fallback if GitHub gives email directly
+    if email is None:
+        email = user_info.get("email")
+
+    name = user_info.get("name") or user_info.get("login")
+    avatar_url = user_info.get("avatar_url", "")
+
+    # Same DB logic as Google
+    response = supabase.table("profiles").select("*").eq("email", email).execute()
+    user_data = response.data
+    print(user_data)
+
+    if not user_data:
+        insert_res = supabase.table("profiles").insert({
+            "email": email,
+            "name": name,
+            "picture_url": avatar_url,
+            "date_created": str(datetime.datetime.now()),
+            "github_id": user_info["id"]
+        }).execute()
+        user_row = insert_res.data[0]
+    else:
+        user_row = user_data[0]
+
+    # Store session
+    request.session["user"] = {
+        "id": user_row["id"],
         "email": user_row["email"],
         "name": user_row["name"],
         "picture_url": user_row["picture_url"]

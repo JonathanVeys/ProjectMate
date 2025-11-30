@@ -29,4 +29,3 @@ app.include_router(model_inference.router)
 app.include_router(projects.router)
 app.include_router(pages.router)
 app.include_router(tasks.router)
-

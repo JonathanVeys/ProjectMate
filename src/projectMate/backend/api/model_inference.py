@@ -61,9 +61,10 @@ def calculate_days_remaining(deadline_str: str) -> int:
     return (dt.date() - now.date()).days
 
 
-def build_summary_prompt(project_spec: str) -> str:
+def build_summary_prompt(project_spec: str, deadline:str|None=None) -> str:
     model_prompt = f"""
     Todays date: {datetime.now()}
+    Deadline: {deadline}
 
     You are a project information extraction assistant. 
     Your job is to read the following project specification and extract ALL key information, without adding or inferring anything that is not explicitly present in the text.
@@ -76,6 +77,7 @@ def build_summary_prompt(project_spec: str) -> str:
     - Every task must directly originate from the project spec text.
     - All dates must be ISO format if present, otherwise null.
     - Each task should be short and precise, aim for tasks that should not take longer then 1-2 hours at a time.
+    - If deadline provided is a valid date, then assume that is the true deadline for the project regardless of what the spec says
 
     THE JSON SCHEMA YOU MUST RETURN:
 
@@ -102,7 +104,9 @@ def build_summary_prompt(project_spec: str) -> str:
     "tasks": [
         {{
             "task": string,
-            "source_sentence": string
+            "duration": float,
+            "source_sentence": string,
+            "due_date":date (iso)
         }}
     ],
     "extra": {{
@@ -118,7 +122,14 @@ def build_summary_prompt(project_spec: str) -> str:
     - "description_short": 3–5 sentence summary of the project.
     - "deliverables": items the student must submit.
     - "methods_required": models, algorithms, or approaches the spec requires.
-    - "tasks": small actionable items, each tied to the **exact sentence in the text** they came from.
+    - "tasks": actionable steps required to complete the project.
+    - A task should represent a coherent 1–2 hour block of work a student would naturally complete in one sitting.
+    - Merge multiple related instructions into a single task if they clearly describe the same work item.
+    - Do NOT generate a separate task for every sentence.
+    - Avoid duplicate tasks (e.g., “implement Dropout” and “write fprop/bprop” should be one combined task).
+    - Aim for roughly 8–15 tasks total unless the project specification is unusually long.
+    - Each task must cite at least one source sentence from the text. If multiple sentences feed into a task, pick the most representative one.
+    - Each task should include a date to complete the task by to keep the user on track, aim for the last task to be completed a 2 days before the deadline.
     - "submission_requirements": formatting, report length, file types, etc.
     - "extra": anything important but uncategorised.
 
@@ -184,7 +195,7 @@ def inference(prompt: str):
     client = OpenAI()
 
     response = client.responses.create(
-    model="gpt-5-nano",
+    model="gpt-5-mini",
     input=prompt
     )
 
@@ -208,6 +219,12 @@ async def next_steps(project_id:str):
     project = cast(Dict[str, Any], project_res.data[0])
 
     tasks_res = supabase.table("task_progress").select("*").eq("project_id", project_id).execute()
+
+    completed_idx = [task["task_index"] for task in tasks_res.data if task["completed"]==True]
+    completed_tasks = [task for idx,task in enumerate(project["summary_json"]["tasks"]) if idx in completed_idx]
+
+    incompleted_idx = [task["task_index"] for task in tasks_res.data if task["completed"]==False]
+    incompleted_tasks = [task for idx,task in enumerate(project["summary_json"]["tasks"]) if idx in incompleted_idx]
     tasks = tasks_res.data
 
     project_state = {
@@ -217,14 +234,14 @@ async def next_steps(project_id:str):
         "days_remaining": calculate_days_remaining(project["deadline"]),
         "description": project["summary_json"]["description_short"],
         "tasks":tasks,
-        "tasks_completed": [task for task in tasks if task["completed"]],
-        "tasks_incomplete": [task for task in tasks if not task["completed"]],
+        "tasks_completed": completed_tasks,
+        "tasks_incomplete": incompleted_tasks,
         "estimated_hours_remaining": []
     }
 
     prompt = build_next_tasks_prompt(project_state)
 
-    print(prompt)
+    # print(prompt)
     next_tasks_raw = inference(prompt)
     next_tasks = parse_llm_json(next_tasks_raw)
 

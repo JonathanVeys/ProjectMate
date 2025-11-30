@@ -240,13 +240,27 @@ nav a {
     100% { transform: translate(0); }
 }
 
+.shake {
+    animation: vibrate 0.25s infinite linear;
+}
+
+.urgent {
+    background: radial-gradient(
+        circle,
+        rgba(255, 200, 200, 0.15) 0%,     /* soft tint in the middle */
+        rgba(255, 150, 150, 0.25) 40%,    /* gentle pinkish */
+        rgba(255, 100, 100, 0.35) 100%    /* stronger towards edges */
+    ) !important;
+    border: 2px solid rgba(255, 120, 120, 0.5);
+}
+
 
 .stat-card {
     flex: 1;
 
     /* Layout / spacing */
     padding: 16px 20px;
-    margin: 0 8px;
+    /* margin: 0 0px; */
 
     /* Visual styling */
     background: white;
@@ -260,8 +274,6 @@ nav a {
 
     /* Animation (optional subtle hover) */
     transition: transform 0.15s ease, box-shadow 0.15s ease;
-
-    /* animation: vibrate 0.2s infinite linear; */
 }
 
 .stat-card:hover {
@@ -280,5 +292,80 @@ nav a {
     font-size: 1.4rem;
     font-weight: 700;
     color: #222;
+}
+
+
+
+/* 
+
+*/
+
+/* ======================================================
+   Main Container
+====================================================== */
+.container {
+    display: flex;
+    gap: 20px;                  /* modern spacing */
+    border-radius: 12px;
+}
+
+.hero {
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;                 /* spacing between tiles + breakdown */
+    padding: 16px;
+    border-radius: 12px;
+}
+
+.tasks {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.tiles {
+    display: flex;
+    flex-wrap: wrap;
+    gap:16px;
+    margin-top: -18px;
+}
+
+.tiles .stat-card {
+    flex: 1 1 calc(20% - 16px); /* 3 tiles per row, responsive */
+}
+
+.breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+
+    background: #fafafa;        /* subtle difference from main card */
+    border-radius: 10px;
+    border: 1px solid #e6e6e6;
+}
+
+
+
+.info-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 6px;
+    align-items: center;
+    height: 15px;
+}
+
+.info-row .label {
+    font-weight: 600;
+}
+
+.info-row .value {
+    color: #333;
 }
 

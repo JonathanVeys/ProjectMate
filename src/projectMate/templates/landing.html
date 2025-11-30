@@ -91,20 +91,20 @@
     <div id="newProjectModal" class="modal hidden">
         <div class="modal-content">
             <h2>Create New Project</h2>
-                <form id="projectForm" onsubmit="submitProjectForm(event)" enctype="multipart/form-data">
-                    
-                    <!-- Basic fields -->
-                    <input type="text" name="title" placeholder="Project Title" required>
-                    <input type="date" name="deadline" placeholder="Project Deadline" required>
-                    <input type="text" name="description" placeholder="Project Description" required>
+            <form id="projectForm" onsubmit="submitProjectForm(event)" enctype="multipart/form-data">
+                
+                <!-- Basic fields -->
+                <input type="text" name="title" placeholder="Project Title" required>
+                <input type="date" name="deadline" placeholder="Project Deadline" required>
+                <input type="text" name="description" placeholder="Project Description" required>
 
-                    <!-- File upload -->
-                    <input type="file" name="spec_file" id="specFile" class="hidden-file-input">
-                    
-                    <!-- Form buttons -->
-                    <div class="form-button-row">
-                        <button type="submit">Create</button>
-                        <button class="close-btn" onclick="closeModal()">Close</button>
+                <!-- File upload -->
+                <input type="file" name="spec_file" id="specFile" class="hidden-file-input">
+                
+                <!-- Form buttons -->
+                <div class="form-button-row">
+                    <button type="submit">Create</button>
+                    <button type="button" class="close-btn" onclick="closeModal()">Close</button>
                 </div> 
             </form>
         </div>

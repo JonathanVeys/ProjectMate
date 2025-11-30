@@ -67,9 +67,13 @@ async def create_project(
         }).eq("id", project_id).execute()
 
     for i, task in enumerate(project_summary['tasks']):     #type:ignore 
+        print(task)
         supabase.table("task_progress").insert({
             "id": task["id"],
             "project_id": project_id,
+            "description": task["task"],
+            "duration":task["duration"],
+            "due_date":task["due_date"],
             "task_index": i,
             "completed": False
         }).execute()
@@ -90,7 +94,8 @@ async def delete_project(request: Request, project_id:str):
 
     #Remove row relating to project
     res = supabase.table("projects").delete().eq("id",project_id).eq("user_id", user_id).execute()
-    logger.info(f"[DELETE PROJECT] Project deleted: {res.data}")
+    res = cast(Dict[str,Any], res.data[0])
+    logger.info(f"[DELETE PROJECT] Project deleted: {res["id"]}")
 
     #Remove files relating to project
     files = supabase.storage.from_("project_spec").list(project_id)
@@ -99,9 +104,9 @@ async def delete_project(request: Request, project_id:str):
     logger.info(f"[DELETE PROJECT] Project Files Deleted {project_id}")
 
 
-    if res.data == []:  # nothing was deleted
+    if res == []:  # nothing was deleted
         return JSONResponse({"error": "Project not found or not yours"}, status_code=404)
 
-    return {"success": True, "deleted_project": res.data}
+    return {"success": True, "deleted_project": res["id"]}
 
    

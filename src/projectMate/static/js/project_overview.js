@@ -5,6 +5,7 @@ document.querySelectorAll(".task-checkbox").forEach(checkbox => {
 
         await updateTaskCompletion(taskId, isCompleted);
         updateProgressBar();
+        updateUrgencyState();
     });
 });
 
@@ -34,4 +35,35 @@ function updateProgressBar() {
     const bar = document.getElementById("progress-bar");
     bar.style.width = percent + "%";
     bar.textContent = percent + "%";
+
+    // NEW: update X/Y display
+    const completedDisplay = document.getElementById("completed-tasks-display");
+    if (completedDisplay) {
+        completedDisplay.textContent = `${completedCount}/${total}`;
+    }
+}
+
+
+function updateUrgencyState() {
+    const tile = document.getElementById("deadline-tile");
+    const valueElem = document.getElementById("days-remaining-val");
+    const progressElem = document.getElementById("progress-bar");
+
+    if (!tile || !valueElem || !progressElem) return;
+
+    const progressVal = parseInt(progressElem.textContent.trim());
+    const daysRemaining = parseInt(valueElem.textContent.trim());
+
+    // If progress > 90% → clear warnings
+    if (progressVal > 90) {
+        tile.classList.remove("shake", "urgent");
+        return;
+    }
+
+    // If progress <= 90 AND days < 5 → show warnings
+    if (daysRemaining < 5) {
+        tile.classList.add("shake", "urgent");
+    } else {
+        tile.classList.remove("shake", "urgent");
+    }
 }
