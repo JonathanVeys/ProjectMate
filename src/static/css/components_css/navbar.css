@@ -1,0 +1,28 @@
+header {
+    background-color: white;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 15px 20px;
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    font-weight: 500;
+    color: #333;
+}
+
+nav a:hover {
+    color: #6C63FF;
+}

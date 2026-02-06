@@ -1,0 +1,58 @@
+.tile {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 12px;
+    width: 260px;
+    background-color: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin: 10px;
+
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    /* cursor: pointer; optional but recommended */
+}
+
+.tile h3 {
+    margin-top: 0;
+}
+
+.tiles-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    /* padding: 1rem; */
+}
+
+
+.tile:hover {
+    transform: scale(1.03);          /* grow by 3% */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15); /* soft highlight */
+}
+
+
+
+.tile-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.open-btn {
+    background: #4CAF50;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.delete-btn {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background: #e63939;
+}
