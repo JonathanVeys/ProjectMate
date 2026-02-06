@@ -3,3 +3,4 @@
 venv/
 .env
 DELETEME.py
+running_logs.log

@@ -3508,3 +3508,730 @@ pip install python-multipart
 [2025-11-30 23:07:53,549;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress?select=%2A&project_id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
 [2025-11-30 23:09:27,361;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
 [2025-11-30 23:09:27,444;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress?select=%2A&project_id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
+[2026-01-24 13:30:04,916;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-01-24 13:30:07,224;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-01-24 13:30:07,288;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-01-24 13:40:34,630;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-01-24 13:40:37,338;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-01-24 13:40:37,416;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-01-24 13:40:38,029;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-01-24 13:40:38,135;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-24 13:40:40,427;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
+[2026-01-24 13:40:40,520;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress?select=%2A&project_id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
+[2026-01-24 13:40:50,134;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-01-24 13:40:50,241;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jcrocker106%40gmail.com "HTTP/2 200 OK"]
+[2026-01-24 13:40:50,320;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.9f5e75b6-d5b2-47f7-b722-a3014ef7640c "HTTP/2 200 OK"]
+[2026-01-24 13:42:03,276;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-01-24 13:42:03,475;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-01-24 13:42:03,570;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 10:12:29,415;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-01-25 10:12:31,733;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-01-25 10:12:31,802;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-01-25 10:12:32,807;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-01-25 10:12:32,921;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 10:12:34,478;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
+[2026-01-25 10:12:34,571;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress?select=%2A&project_id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
+[2026-01-25 10:12:48,050;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
+[2026-01-25 10:12:48,132;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress?select=%2A&project_id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
+[2026-01-25 10:13:09,162;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
+[2026-01-25 10:13:09,231;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress?select=%2A&project_id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
+[2026-01-25 10:13:09,825;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
+[2026-01-25 10:13:09,893;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress?select=%2A&project_id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
+[2026-01-25 10:16:52,041;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
+[2026-01-25 10:16:52,119;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress?select=%2A&project_id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
+[2026-01-25 10:16:52,710;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
+[2026-01-25 10:16:52,781;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress?select=%2A&project_id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
+[2026-01-25 10:17:14,870;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
+[2026-01-25 10:17:14,948;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress?select=%2A&project_id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
+[2026-01-25 10:38:34,636;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-01-25 10:38:36,688;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-01-25 10:38:36,752;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-01-25 10:38:37,473;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-01-25 10:38:37,605;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 10:38:38,990;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
+[2026-01-25 10:38:39,081;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress?select=%2A&project_id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
+[2026-01-25 10:38:40,156;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
+[2026-01-25 10:38:40,232;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress?select=%2A&project_id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
+[2026-01-25 10:39:19,208;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-01-25 10:39:21,107;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-01-25 10:39:21,177;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-01-25 10:39:21,393;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-01-25 10:39:21,493;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 10:39:22,925;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
+[2026-01-25 10:39:23,008;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress?select=%2A&project_id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
+[2026-01-25 10:39:23,905;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
+[2026-01-25 10:39:23,994;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress?select=%2A&project_id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
+[2026-01-25 10:39:48,871;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-01-25 10:39:50,697;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-01-25 10:39:50,763;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-01-25 10:39:50,960;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-01-25 10:39:51,058;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 10:39:56,497;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
+[2026-01-25 10:39:56,575;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress?select=%2A&project_id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
+[2026-01-25 10:39:57,543;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
+[2026-01-25 10:39:57,620;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress?select=%2A&project_id=eq.12a543d4-bff6-4e6a-8ec6-7ee13816a69a "HTTP/2 200 OK"]
+[2026-01-25 12:07:21,679;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-01-25 12:07:23,731;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-01-25 12:07:23,803;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-01-25 12:07:24,569;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-01-25 12:07:24,694;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 12:07:47,060;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P27' is an invalid float value]
+[2026-01-25 12:07:47,062;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P35' is an invalid float value]
+[2026-01-25 12:07:47,088;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P52' is an invalid float value]
+[2026-01-25 12:07:47,088;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P58' is an invalid float value]
+[2026-01-25 12:07:47,914;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P404' is an invalid float value]
+[2026-01-25 12:07:47,922;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P412' is an invalid float value]
+[2026-01-25 12:07:48,007;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P446' is an invalid float value]
+[2026-01-25 12:07:48,008;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P450' is an invalid float value]
+[2026-01-25 12:07:48,010;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P453' is an invalid float value]
+[2026-01-25 12:08:49,036;INFO;_client;HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"]
+[2026-01-25 12:08:49,248;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects "HTTP/2 201 Created"]
+[2026-01-25 12:08:49,250;INFO;projects;[CREATE PROJECT] Model Inference]
+[2026-01-25 12:08:51,593;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/storage/v1/object/project_spec/6dcbe418-d105-47bb-9da6-3c7a6e37c4bf/Modern%20GPU%20Programming%20-%20v1.pdf "HTTP/2 200 OK"]
+[2026-01-25 12:08:51,670;INFO;_client;HTTP Request: PATCH https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?id=eq.6dcbe418-d105-47bb-9da6-3c7a6e37c4bf "HTTP/2 200 OK"]
+[2026-01-25 12:08:51,671;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 52, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:08:51,674;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 52, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:08:51,674;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 52, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:08:51,675;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 52, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:08:51,675;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 52, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:08:51,675;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 52, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:08:51,676;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 52, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:08:51,676;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 52, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:08:51,676;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 52, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:08:51,677;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 52, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:08:51,677;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 52, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:08:51,677;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 52, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:08:51,678;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 52, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:08:51,801;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 12:08:54,483;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&id=eq.6dcbe418-d105-47bb-9da6-3c7a6e37c4bf "HTTP/2 200 OK"]
+[2026-01-25 12:08:54,567;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress?select=%2A&project_id=eq.6dcbe418-d105-47bb-9da6-3c7a6e37c4bf "HTTP/2 200 OK"]
+[2026-01-25 12:11:20,849;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 12:11:23,715;INFO;_client;HTTP Request: DELETE https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?id=eq.6dcbe418-d105-47bb-9da6-3c7a6e37c4bf&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 12:11:23,717;INFO;projects;[DELETE PROJECT] Project deleted: 6dcbe418-d105-47bb-9da6-3c7a6e37c4bf]
+[2026-01-25 12:11:24,002;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/storage/v1/object/list/project_spec "HTTP/2 200 OK"]
+[2026-01-25 12:11:24,174;INFO;_client;HTTP Request: DELETE https://bagwatovrhptoojzjfhz.supabase.co/storage/v1/object/project_spec "HTTP/2 200 OK"]
+[2026-01-25 12:11:24,174;INFO;projects;[DELETE PROJECT] Project Files Deleted 6dcbe418-d105-47bb-9da6-3c7a6e37c4bf]
+[2026-01-25 12:11:24,255;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 12:11:44,591;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P27' is an invalid float value]
+[2026-01-25 12:11:44,591;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P35' is an invalid float value]
+[2026-01-25 12:11:44,617;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P52' is an invalid float value]
+[2026-01-25 12:11:44,618;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P58' is an invalid float value]
+[2026-01-25 12:11:45,537;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P404' is an invalid float value]
+[2026-01-25 12:11:45,545;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P412' is an invalid float value]
+[2026-01-25 12:11:45,629;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P446' is an invalid float value]
+[2026-01-25 12:11:45,630;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P450' is an invalid float value]
+[2026-01-25 12:11:45,632;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P453' is an invalid float value]
+[2026-01-25 12:12:51,316;INFO;_client;HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"]
+[2026-01-25 12:12:51,928;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects "HTTP/2 201 Created"]
+[2026-01-25 12:12:51,929;INFO;projects;[CREATE PROJECT] Model Inference]
+[2026-01-25 12:12:54,283;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/storage/v1/object/project_spec/a4f34133-8c50-4ba7-aac3-2136b36c454c/Modern%20GPU%20Programming%20-%20v1.pdf "HTTP/2 200 OK"]
+[2026-01-25 12:12:54,375;INFO;_client;HTTP Request: PATCH https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?id=eq.a4f34133-8c50-4ba7-aac3-2136b36c454c "HTTP/2 200 OK"]
+[2026-01-25 12:12:54,376;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 52, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:12:54,377;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 52, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:12:54,378;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 52, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:12:54,378;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 52, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:12:54,378;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 52, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:12:54,379;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 52, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:12:54,379;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 52, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:12:54,379;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 52, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:12:54,379;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 52, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:12:54,380;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 52, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:12:54,380;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 52, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:12:54,381;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 52, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:12:54,491;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 12:24:16,941;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-01-25 12:24:18,902;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-01-25 12:24:18,972;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-01-25 12:24:19,766;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-01-25 12:24:19,899;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 12:24:22,268;INFO;_client;HTTP Request: DELETE https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?id=eq.a4f34133-8c50-4ba7-aac3-2136b36c454c&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 12:24:22,269;INFO;projects;[DELETE PROJECT] Project deleted: a4f34133-8c50-4ba7-aac3-2136b36c454c]
+[2026-01-25 12:24:22,633;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/storage/v1/object/list/project_spec "HTTP/2 200 OK"]
+[2026-01-25 12:24:22,836;INFO;_client;HTTP Request: DELETE https://bagwatovrhptoojzjfhz.supabase.co/storage/v1/object/project_spec "HTTP/2 200 OK"]
+[2026-01-25 12:24:22,836;INFO;projects;[DELETE PROJECT] Project Files Deleted a4f34133-8c50-4ba7-aac3-2136b36c454c]
+[2026-01-25 12:24:22,946;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 12:24:35,720;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P27' is an invalid float value]
+[2026-01-25 12:24:35,721;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P35' is an invalid float value]
+[2026-01-25 12:24:35,747;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P52' is an invalid float value]
+[2026-01-25 12:24:35,748;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P58' is an invalid float value]
+[2026-01-25 12:24:36,569;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P404' is an invalid float value]
+[2026-01-25 12:24:36,578;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P412' is an invalid float value]
+[2026-01-25 12:24:36,664;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P446' is an invalid float value]
+[2026-01-25 12:24:36,666;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P450' is an invalid float value]
+[2026-01-25 12:24:36,668;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P453' is an invalid float value]
+[2026-01-25 12:25:53,566;INFO;_client;HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"]
+[2026-01-25 12:25:53,814;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects "HTTP/2 201 Created"]
+[2026-01-25 12:25:53,815;INFO;projects;[CREATE PROJECT] Model Inference]
+[2026-01-25 12:25:55,919;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/storage/v1/object/project_spec/745629b1-6327-45f9-8319-09f0d349dd6f/Modern%20GPU%20Programming%20-%20v1.pdf "HTTP/2 200 OK"]
+[2026-01-25 12:25:56,025;INFO;_client;HTTP Request: PATCH https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?id=eq.745629b1-6327-45f9-8319-09f0d349dd6f "HTTP/2 200 OK"]
+[2026-01-25 12:25:56,026;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 58, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:25:56,028;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 58, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:25:56,029;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 58, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:25:56,029;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 58, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:25:56,029;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 58, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:25:56,030;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 58, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:25:56,030;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 58, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:25:56,030;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 58, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:25:56,030;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 58, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:25:56,031;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 58, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:25:56,031;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 58, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:25:56,032;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 58, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:25:56,032;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 58, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:25:56,032;ERROR;tasks;Failed to create task]
+Traceback (most recent call last):
+  File "/Users/jonathancrocker/Documents/Coding Projects/ProjectMate/src/backend/api/tasks.py", line 58, in createTask
+    data = task.model_dump()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'model_dump'
+[2026-01-25 12:25:56,167;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 12:25:58,480;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&id=eq.745629b1-6327-45f9-8319-09f0d349dd6f "HTTP/2 200 OK"]
+[2026-01-25 12:25:58,581;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress?select=%2A&project_id=eq.745629b1-6327-45f9-8319-09f0d349dd6f "HTTP/2 200 OK"]
+[2026-01-25 12:26:29,483;INFO;_client;HTTP Request: DELETE https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?id=eq.745629b1-6327-45f9-8319-09f0d349dd6f&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 12:26:29,484;INFO;projects;[DELETE PROJECT] Project deleted: 745629b1-6327-45f9-8319-09f0d349dd6f]
+[2026-01-25 12:26:29,735;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/storage/v1/object/list/project_spec "HTTP/2 200 OK"]
+[2026-01-25 12:26:29,914;INFO;_client;HTTP Request: DELETE https://bagwatovrhptoojzjfhz.supabase.co/storage/v1/object/project_spec "HTTP/2 200 OK"]
+[2026-01-25 12:26:29,915;INFO;projects;[DELETE PROJECT] Project Files Deleted 745629b1-6327-45f9-8319-09f0d349dd6f]
+[2026-01-25 12:26:30,033;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 12:26:32,601;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P27' is an invalid float value]
+[2026-01-25 12:26:32,602;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P35' is an invalid float value]
+[2026-01-25 12:26:32,629;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P52' is an invalid float value]
+[2026-01-25 12:26:32,630;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P58' is an invalid float value]
+[2026-01-25 12:26:33,470;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P404' is an invalid float value]
+[2026-01-25 12:26:33,478;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P412' is an invalid float value]
+[2026-01-25 12:26:33,564;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P446' is an invalid float value]
+[2026-01-25 12:26:33,565;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P450' is an invalid float value]
+[2026-01-25 12:26:33,567;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P453' is an invalid float value]
+[2026-01-25 12:27:24,699;INFO;_client;HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"]
+[2026-01-25 12:27:24,953;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects "HTTP/2 201 Created"]
+[2026-01-25 12:27:24,953;INFO;projects;[CREATE PROJECT] Model Inference]
+[2026-01-25 12:27:27,156;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/storage/v1/object/project_spec/a55a54c8-e467-4ed9-b126-7a77f7ab7466/Modern%20GPU%20Programming%20-%20v1.pdf "HTTP/2 200 OK"]
+[2026-01-25 12:27:27,236;INFO;_client;HTTP Request: PATCH https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?id=eq.a55a54c8-e467-4ed9-b126-7a77f7ab7466 "HTTP/2 200 OK"]
+[2026-01-25 12:27:27,359;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 400 Bad Request"]
+[2026-01-25 13:15:26,446;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P27' is an invalid float value]
+[2026-01-25 13:15:26,447;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P35' is an invalid float value]
+[2026-01-25 13:15:26,473;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P52' is an invalid float value]
+[2026-01-25 13:15:26,474;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P58' is an invalid float value]
+[2026-01-25 13:15:27,297;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P404' is an invalid float value]
+[2026-01-25 13:15:27,306;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P412' is an invalid float value]
+[2026-01-25 13:15:27,392;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P446' is an invalid float value]
+[2026-01-25 13:15:27,393;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P450' is an invalid float value]
+[2026-01-25 13:15:27,395;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P453' is an invalid float value]
+[2026-01-25 13:16:23,091;INFO;_client;HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"]
+[2026-01-25 13:16:23,911;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects "HTTP/2 201 Created"]
+[2026-01-25 13:16:23,912;INFO;projects;[CREATE PROJECT] Model Inference]
+[2026-01-25 13:16:26,406;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/storage/v1/object/project_spec/5d153114-61b6-4b68-a05d-1e3dddf36af6/Modern%20GPU%20Programming%20-%20v1.pdf "HTTP/2 200 OK"]
+[2026-01-25 13:16:26,498;INFO;_client;HTTP Request: PATCH https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?id=eq.5d153114-61b6-4b68-a05d-1e3dddf36af6 "HTTP/2 200 OK"]
+[2026-01-25 13:16:26,589;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:16:26,779;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:16:26,850;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:16:26,932;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:16:27,028;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:16:27,102;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:16:27,180;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:16:27,262;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:16:27,329;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:16:27,405;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:16:27,475;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:16:27,543;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:16:27,619;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:16:27,739;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 13:16:30,440;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&id=eq.5d153114-61b6-4b68-a05d-1e3dddf36af6 "HTTP/2 200 OK"]
+[2026-01-25 13:16:30,513;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress?select=%2A&project_id=eq.5d153114-61b6-4b68-a05d-1e3dddf36af6 "HTTP/2 200 OK"]
+[2026-01-25 13:21:10,307;INFO;_client;HTTP Request: DELETE https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?id=eq.a55a54c8-e467-4ed9-b126-7a77f7ab7466&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 13:21:10,308;INFO;projects;[DELETE PROJECT] Project deleted: a55a54c8-e467-4ed9-b126-7a77f7ab7466]
+[2026-01-25 13:21:10,532;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/storage/v1/object/list/project_spec "HTTP/2 200 OK"]
+[2026-01-25 13:21:10,706;INFO;_client;HTTP Request: DELETE https://bagwatovrhptoojzjfhz.supabase.co/storage/v1/object/project_spec "HTTP/2 200 OK"]
+[2026-01-25 13:21:10,706;INFO;projects;[DELETE PROJECT] Project Files Deleted a55a54c8-e467-4ed9-b126-7a77f7ab7466]
+[2026-01-25 13:21:10,798;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 13:21:12,443;INFO;_client;HTTP Request: DELETE https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?id=eq.5d153114-61b6-4b68-a05d-1e3dddf36af6&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 13:21:12,443;INFO;projects;[DELETE PROJECT] Project deleted: 5d153114-61b6-4b68-a05d-1e3dddf36af6]
+[2026-01-25 13:21:12,579;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/storage/v1/object/list/project_spec "HTTP/2 200 OK"]
+[2026-01-25 13:21:12,785;INFO;_client;HTTP Request: DELETE https://bagwatovrhptoojzjfhz.supabase.co/storage/v1/object/project_spec "HTTP/2 200 OK"]
+[2026-01-25 13:21:12,785;INFO;projects;[DELETE PROJECT] Project Files Deleted 5d153114-61b6-4b68-a05d-1e3dddf36af6]
+[2026-01-25 13:21:12,872;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 13:21:15,053;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P27' is an invalid float value]
+[2026-01-25 13:21:15,053;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P35' is an invalid float value]
+[2026-01-25 13:21:15,081;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P52' is an invalid float value]
+[2026-01-25 13:21:15,082;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P58' is an invalid float value]
+[2026-01-25 13:21:15,939;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P404' is an invalid float value]
+[2026-01-25 13:21:15,948;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P412' is an invalid float value]
+[2026-01-25 13:21:16,041;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P446' is an invalid float value]
+[2026-01-25 13:21:16,042;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P450' is an invalid float value]
+[2026-01-25 13:21:16,044;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P453' is an invalid float value]
+[2026-01-25 13:22:10,744;INFO;_client;HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"]
+[2026-01-25 13:22:10,971;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects "HTTP/2 201 Created"]
+[2026-01-25 13:22:10,973;INFO;projects;[CREATE PROJECT] Model Inference]
+[2026-01-25 13:22:12,893;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/storage/v1/object/project_spec/2b4d08b8-47ea-4ecc-a388-fd37283344c3/Modern%20GPU%20Programming%20-%20v1.pdf "HTTP/2 200 OK"]
+[2026-01-25 13:22:12,975;INFO;_client;HTTP Request: PATCH https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?id=eq.2b4d08b8-47ea-4ecc-a388-fd37283344c3 "HTTP/2 200 OK"]
+[2026-01-25 13:22:13,050;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:22:13,128;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:22:13,196;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:22:13,279;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:22:13,355;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:22:13,433;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:22:13,508;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:22:13,579;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:22:13,647;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:22:13,726;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:22:13,800;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:22:13,871;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:22:13,943;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:22:14,017;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:22:14,127;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 13:31:56,475;INFO;_client;HTTP Request: DELETE https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?id=eq.2b4d08b8-47ea-4ecc-a388-fd37283344c3&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 13:31:56,475;INFO;projects;[DELETE PROJECT] Project deleted: 2b4d08b8-47ea-4ecc-a388-fd37283344c3]
+[2026-01-25 13:31:56,984;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/storage/v1/object/list/project_spec "HTTP/2 200 OK"]
+[2026-01-25 13:31:57,175;INFO;_client;HTTP Request: DELETE https://bagwatovrhptoojzjfhz.supabase.co/storage/v1/object/project_spec "HTTP/2 200 OK"]
+[2026-01-25 13:31:57,175;INFO;projects;[DELETE PROJECT] Project Files Deleted 2b4d08b8-47ea-4ecc-a388-fd37283344c3]
+[2026-01-25 13:31:57,299;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 13:31:59,554;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P27' is an invalid float value]
+[2026-01-25 13:31:59,554;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P35' is an invalid float value]
+[2026-01-25 13:31:59,581;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P52' is an invalid float value]
+[2026-01-25 13:31:59,581;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P58' is an invalid float value]
+[2026-01-25 13:32:00,418;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P404' is an invalid float value]
+[2026-01-25 13:32:00,427;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P412' is an invalid float value]
+[2026-01-25 13:32:00,515;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P446' is an invalid float value]
+[2026-01-25 13:32:00,516;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P450' is an invalid float value]
+[2026-01-25 13:32:00,518;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P453' is an invalid float value]
+[2026-01-25 13:33:35,143;INFO;_client;HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"]
+[2026-01-25 13:33:35,316;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects "HTTP/2 201 Created"]
+[2026-01-25 13:33:35,318;INFO;projects;[CREATE PROJECT] Model Inference]
+[2026-01-25 13:33:37,597;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/storage/v1/object/project_spec/467a7e20-cb11-4231-bfba-6b73475f1f9c/Modern%20GPU%20Programming%20-%20v1.pdf "HTTP/2 200 OK"]
+[2026-01-25 13:33:37,684;INFO;_client;HTTP Request: PATCH https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?id=eq.467a7e20-cb11-4231-bfba-6b73475f1f9c "HTTP/2 200 OK"]
+[2026-01-25 13:33:37,897;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:33:37,980;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:33:38,093;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:33:38,338;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:33:38,419;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:33:38,535;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:33:38,614;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:33:38,695;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:33:38,783;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:33:38,859;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:33:38,935;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:33:39,012;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 13:33:39,111;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 14:04:25,635;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&id=eq.467a7e20-cb11-4231-bfba-6b73475f1f9c "HTTP/2 200 OK"]
+[2026-01-25 14:04:25,728;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress?select=%2A&project_id=eq.467a7e20-cb11-4231-bfba-6b73475f1f9c "HTTP/2 200 OK"]
+[2026-01-25 14:06:13,046;INFO;_client;HTTP Request: DELETE https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?id=eq.467a7e20-cb11-4231-bfba-6b73475f1f9c&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 14:06:13,047;INFO;projects;[DELETE PROJECT] Project deleted: 467a7e20-cb11-4231-bfba-6b73475f1f9c]
+[2026-01-25 14:06:13,499;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/storage/v1/object/list/project_spec "HTTP/2 200 OK"]
+[2026-01-25 14:06:13,702;INFO;_client;HTTP Request: DELETE https://bagwatovrhptoojzjfhz.supabase.co/storage/v1/object/project_spec "HTTP/2 200 OK"]
+[2026-01-25 14:06:13,702;INFO;projects;[DELETE PROJECT] Project Files Deleted 467a7e20-cb11-4231-bfba-6b73475f1f9c]
+[2026-01-25 14:06:13,797;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 14:06:15,654;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P27' is an invalid float value]
+[2026-01-25 14:06:15,655;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P35' is an invalid float value]
+[2026-01-25 14:06:15,682;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P52' is an invalid float value]
+[2026-01-25 14:06:15,682;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P58' is an invalid float value]
+[2026-01-25 14:06:16,498;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P404' is an invalid float value]
+[2026-01-25 14:06:16,506;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P412' is an invalid float value]
+[2026-01-25 14:06:16,591;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P446' is an invalid float value]
+[2026-01-25 14:06:16,592;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P450' is an invalid float value]
+[2026-01-25 14:06:16,594;WARNING;pdfinterp;Cannot set gray non-stroke color because /'P453' is an invalid float value]
+[2026-01-25 14:07:29,992;INFO;_client;HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"]
+[2026-01-25 14:07:30,154;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects "HTTP/2 201 Created"]
+[2026-01-25 14:07:30,155;INFO;projects;[CREATE PROJECT] Model Inference]
+[2026-01-25 14:07:32,962;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/storage/v1/object/project_spec/70acb90d-97b7-4bd5-98b0-84db958789a1/Modern%20GPU%20Programming%20-%20v1.pdf "HTTP/2 200 OK"]
+[2026-01-25 14:07:33,044;INFO;_client;HTTP Request: PATCH https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?id=eq.70acb90d-97b7-4bd5-98b0-84db958789a1 "HTTP/2 200 OK"]
+[2026-01-25 14:07:33,120;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 14:07:33,193;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 14:07:33,271;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 14:07:33,344;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 14:07:33,421;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 14:07:33,507;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 14:07:33,579;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 14:07:33,649;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 14:07:33,727;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 14:07:33,810;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 14:07:33,886;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 14:07:33,966;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 14:07:34,059;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 14:08:50,009;INFO;_client;HTTP Request: DELETE https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?id=eq.70acb90d-97b7-4bd5-98b0-84db958789a1&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 14:08:50,010;INFO;projects;[DELETE PROJECT] Project deleted: 70acb90d-97b7-4bd5-98b0-84db958789a1]
+[2026-01-25 14:08:50,229;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/storage/v1/object/list/project_spec "HTTP/2 200 OK"]
+[2026-01-25 14:08:50,403;INFO;_client;HTTP Request: DELETE https://bagwatovrhptoojzjfhz.supabase.co/storage/v1/object/project_spec "HTTP/2 200 OK"]
+[2026-01-25 14:08:50,403;INFO;projects;[DELETE PROJECT] Project Files Deleted 70acb90d-97b7-4bd5-98b0-84db958789a1]
+[2026-01-25 14:08:50,505;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 14:08:56,315;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-01-25 14:08:58,296;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-01-25 14:08:58,361;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-01-25 14:08:58,485;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-01-25 14:08:58,583;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 14:10:28,986;INFO;_client;HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"]
+[2026-01-25 14:10:29,237;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects "HTTP/2 201 Created"]
+[2026-01-25 14:10:29,238;INFO;projects;[CREATE PROJECT] Model Inference]
+[2026-01-25 14:10:29,806;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/storage/v1/object/project_spec/283dd99b-fad7-4b82-9046-e0670dd64a07/ADS_CW2_2025_26.pdf "HTTP/2 200 OK"]
+[2026-01-25 14:10:29,889;INFO;_client;HTTP Request: PATCH https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?id=eq.283dd99b-fad7-4b82-9046-e0670dd64a07 "HTTP/2 200 OK"]
+[2026-01-25 14:10:30,011;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 14:10:30,078;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 14:10:30,149;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 14:10:30,233;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 14:10:30,302;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 14:10:30,370;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 14:10:30,438;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 14:10:30,514;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 14:10:30,583;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 14:10:30,664;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress "HTTP/2 201 Created"]
+[2026-01-25 14:10:30,749;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 14:17:38,454;INFO;_client;HTTP Request: POST https://github.com/login/oauth/access_token "HTTP/1.1 200 OK"]
+[2026-01-25 14:17:38,706;INFO;_client;HTTP Request: GET https://api.github.com/user "HTTP/1.1 200 OK"]
+[2026-01-25 14:17:39,060;INFO;_client;HTTP Request: GET https://api.github.com/user/emails "HTTP/1.1 200 OK"]
+[2026-01-25 14:17:39,580;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-01-25 14:17:39,687;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 14:17:45,598;INFO;_client;HTTP Request: POST https://github.com/login/oauth/access_token "HTTP/1.1 200 OK"]
+[2026-01-25 14:17:45,845;INFO;_client;HTTP Request: GET https://api.github.com/user "HTTP/1.1 200 OK"]
+[2026-01-25 14:17:46,046;INFO;_client;HTTP Request: GET https://api.github.com/user/emails "HTTP/1.1 200 OK"]
+[2026-01-25 14:17:46,169;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-01-25 14:17:46,266;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 14:19:51,270;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 15:27:28,047;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-01-25 15:32:12,878;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-01-25 15:32:13,234;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-01-25 15:32:14,274;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-01-25 15:32:14,576;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 15:39:15,332;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-01-25 15:39:18,279;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-01-25 15:39:18,473;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-01-25 15:39:19,033;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-01-25 15:39:19,210;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 15:40:56,204;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-01-25 15:40:59,587;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-01-25 15:40:59,734;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-01-25 15:41:00,512;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-01-25 15:41:00,729;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 15:45:20,663;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-01-25 15:45:24,200;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-01-25 15:45:24,422;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-01-25 15:45:24,714;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-01-25 15:45:24,861;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 15:51:29,355;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-01-25 15:51:32,270;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-01-25 15:51:32,772;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-01-25 15:51:33,232;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-01-25 15:51:33,400;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 15:56:32,653;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-01-25 15:56:41,074;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-01-25 15:56:41,342;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-01-25 15:56:42,193;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-01-25 15:56:42,507;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 15:57:48,517;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 15:59:58,701;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 16:00:09,840;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&id=eq.283dd99b-fad7-4b82-9046-e0670dd64a07 "HTTP/2 200 OK"]
+[2026-01-25 16:00:10,040;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/task_progress?select=%2A&project_id=eq.283dd99b-fad7-4b82-9046-e0670dd64a07 "HTTP/2 200 OK"]
+[2026-01-25 20:26:15,755;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-01-25 20:26:18,016;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-01-25 20:26:18,116;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-01-25 20:26:19,126;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-01-25 20:26:19,284;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:28:17,136;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:28:41,610;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-01-25 20:28:44,393;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-01-25 20:28:44,503;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-01-25 20:28:44,638;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-01-25 20:28:44,733;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:29:03,104;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:29:04,959;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:29:34,934;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:29:36,731;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:29:46,476;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:29:59,756;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:30:09,633;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:30:36,974;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:33:13,035;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:33:40,949;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-01-25 20:34:02,475;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-01-25 20:34:02,546;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-01-25 20:34:02,707;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-01-25 20:34:02,802;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:36:02,156;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:36:04,754;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:36:30,477;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:36:32,897;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:36:42,973;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:36:54,348;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:36:58,109;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:37:01,974;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:37:26,770;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:37:29,659;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:37:32,734;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:37:44,959;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:39:11,823;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:48:41,286;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:48:43,243;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:48:54,226;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-01-25 20:48:56,627;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-01-25 20:48:56,733;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-01-25 20:48:56,885;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-01-25 20:48:57,008;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:48:59,426;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:50:44,263;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-01-25 20:50:46,402;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-01-25 20:50:46,494;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-01-25 20:50:46,681;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-01-25 20:50:46,783;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:50:49,007;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:51:15,819;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:52:23,718;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-01-25 20:52:26,648;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-01-25 20:52:26,744;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-01-25 20:52:26,921;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-01-25 20:52:27,025;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:52:29,354;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:54:51,285;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:54:54,496;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:55:00,355;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-01-25 20:55:02,399;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-01-25 20:55:02,474;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-01-25 20:55:02,618;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-01-25 20:55:02,732;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:55:04,522;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:55:26,489;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 20:55:57,295;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-01-25 20:55:57,430;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-01-25 20:55:57,524;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 21:00:10,690;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 21:00:12,660;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 21:00:34,084;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-01-25 21:00:36,003;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-01-25 21:00:36,104;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-01-25 21:00:36,227;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-01-25 21:00:36,313;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 21:00:38,483;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 21:02:40,466;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 21:02:46,107;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 21:02:54,231;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 21:09:24,308;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 21:09:25,974;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 21:09:46,577;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-01-25 21:09:48,680;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-01-25 21:09:48,993;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-01-25 21:09:49,237;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-01-25 21:09:49,331;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-01-25 21:09:52,702;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-02-06 15:16:53,562;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-02-06 15:16:56,022;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-02-06 15:16:56,107;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-02-06 15:21:33,920;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-02-06 15:21:36,239;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-02-06 15:21:36,314;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-02-06 15:21:36,794;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-02-06 15:21:36,962;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-02-06 15:21:49,383;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-02-06 15:21:51,649;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-02-06 15:21:51,711;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-02-06 15:21:51,947;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-02-06 15:21:52,045;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-02-06 15:21:56,639;INFO;_client;HTTP Request: DELETE https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?id=eq.bc77eb3d-e3ba-4a2f-b5dd-a2543630a3ff "HTTP/2 200 OK"]
+[2026-02-06 15:25:33,536;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-02-06 15:25:37,374;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-02-06 15:25:37,479;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-02-06 15:25:37,770;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-02-06 15:25:37,864;INFO;_client;HTTP Request: POST https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles "HTTP/2 201 Created"]
+[2026-02-06 15:25:37,973;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.d3b97f9b-0d42-4182-a419-23fa9f8c9302 "HTTP/2 200 OK"]
+[2026-02-06 15:29:07,852;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.d3b97f9b-0d42-4182-a419-23fa9f8c9302 "HTTP/2 200 OK"]
+[2026-02-06 15:30:34,582;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.d3b97f9b-0d42-4182-a419-23fa9f8c9302 "HTTP/2 200 OK"]
+[2026-02-06 15:31:16,961;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-02-06 15:31:20,195;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-02-06 15:31:20,287;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-02-06 15:31:20,524;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-02-06 15:31:20,643;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.d3b97f9b-0d42-4182-a419-23fa9f8c9302 "HTTP/2 200 OK"]
+[2026-02-06 15:31:32,382;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-02-06 15:31:34,437;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-02-06 15:31:34,502;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-02-06 15:31:34,677;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-02-06 15:31:34,781;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.d3b97f9b-0d42-4182-a419-23fa9f8c9302 "HTTP/2 200 OK"]
+[2026-02-06 15:32:11,978;INFO;_client;HTTP Request: GET https://accounts.google.com/.well-known/openid-configuration "HTTP/1.1 200 OK"]
+[2026-02-06 15:32:14,246;INFO;_client;HTTP Request: POST https://oauth2.googleapis.com/token "HTTP/1.1 200 OK"]
+[2026-02-06 15:32:14,335;INFO;_client;HTTP Request: GET https://www.googleapis.com/oauth2/v3/certs "HTTP/1.1 200 OK"]
+[2026-02-06 15:32:14,742;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/profiles?select=%2A&email=eq.jonathancr1234%40gmail.com "HTTP/2 200 OK"]
+[2026-02-06 15:32:14,872;INFO;_client;HTTP Request: GET https://bagwatovrhptoojzjfhz.supabase.co/rest/v1/projects?select=%2A&user_id=eq.d3b97f9b-0d42-4182-a419-23fa9f8c9302 "HTTP/2 200 OK"]
