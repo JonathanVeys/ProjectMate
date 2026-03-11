@@ -2,6 +2,7 @@ from typing import Dict, Any, cast
 
 from fastapi import APIRouter, Request, Form, File, UploadFile
 from fastapi.responses import JSONResponse
+from fastapi.exceptions import HTTPException
 import uuid
 
 from .supabase_client import supabase
@@ -26,33 +27,44 @@ async def create_project(
     '''
     API endpoint for creating a new project
     '''
+
+    #Ensure a valid user is provided
     user = request.session.get("user")
     if not user:
-        return {"success": False, "error": "Not authenticated"}
+        raise HTTPException(status_code=401, detail="Not authenticated")
     
-    contents = await spec_file.read()
-    raw_text = extract_text_from_pdf(contents)
-    model_prompt = build_summary_prompt(raw_text)
-    project_summary = inference(model_prompt)
-    project_summary = parse_llm_json(project_summary)
+    #Generate project summary if spec_file is provide, else generate an empty dict for testing
+    if spec_file:
+        contents = await spec_file.read()
+        raw_text = extract_text_from_pdf(contents)
+        model_prompt = build_summary_prompt(raw_text)
+        project_summary = inference(model_prompt)
+        project_summary = parse_llm_json(project_summary)
+        project_summary = cast(Dict[str, Any], project_summary)
+        for task in project_summary["tasks"]: 
+            task["id"] = str(uuid.uuid4())
+    else:
+        project_summary = dict()
 
-    project_summary = cast(Dict[str, Any], project_summary)
-
-    for task in project_summary["tasks"]: 
-        task["id"] = str(uuid.uuid4())
 
     # 1. Insert the project first
-    res = supabase.table("projects").insert({
-        "user_id": user['id'],
-        "title": title,
-        "deadline": deadline,
-        "description": description,
-        "summary_json":project_summary
-    }).execute()
+    try:
+        res = supabase.table("projects").insert({
+            "user_id": user['id'],
+            "title": title,
+            "deadline": deadline,
+            "description": description,
+            "summary_json":project_summary
+        }).execute()
 
-    logger.info("[CREATE PROJECT] Model Inference")
-    project = cast(Dict[str,Any], res.data[0])
-    project_id = project["id"]
+        #Log that the project has been successfully created
+        logger.info(f"[CREATE PROJECT] Project created")
+        project = cast(Dict[str,Any], res.data[0])
+        project_id = project["id"]
+    except Exception as e:
+        logger.warning(f"[CREATE PROJECT] Failed to create new project | Error: {e}")
+        raise HTTPException(status_code=401, detail=f"Failed to create project: {e}")
+    
 
     # 2. If file uploaded, save it in a folder named after project_id
     if spec_file:
@@ -72,17 +84,18 @@ async def create_project(
             "spec_path": file_path
         }).eq("id", project_id).execute()
 
-    for i, task in enumerate(project_summary['tasks']):   
-        insertTask(projectId=project_id, taskIdx=i, body=
-                   {
-                    "id": task["id"],
-                    "project_id": project_id,
-                    "task_index": i,
-                    "completed": False,
-                    "description": task["task"],
-                    "duration":task["duration"],
-                    "due_date":task["due_date"],
-                   })
+    if "tasks" in project_summary.keys():
+        for i, task in enumerate(project_summary['tasks']):   
+            insertTask(projectId=project_id, taskIdx=i, body=
+                    {
+                        "id": task["id"],
+                        "project_id": project_id,
+                        "task_index": i,
+                        "completed": False,
+                        "description": task["task"],
+                        "duration":task["duration"],
+                        "due_date":task["due_date"],
+                    })
     return {"success": True}
 
 
@@ -105,8 +118,9 @@ async def delete_project(request: Request, project_id:str):
     #Remove files relating to project
     files = supabase.storage.from_("project_spec").list(project_id)
     file_paths = [f"{project_id}/{file['name']}" for file in files]
-    supabase.storage.from_("project_spec").remove(file_paths)
-    logger.info(f"[DELETE PROJECT] Project Files Deleted {project_id}")
+    if file_paths:
+        supabase.storage.from_("project_spec").remove(file_paths)
+        logger.info(f"[DELETE PROJECT] Project Files Deleted {project_id}")
 
 
     if res == []:  # nothing was deleted
