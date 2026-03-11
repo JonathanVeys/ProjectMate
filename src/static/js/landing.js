@@ -1,3 +1,20 @@
+async function loadUser() {
+    const { data: { session } } = await supabaseClient.auth.getSession();
+    if (session) {
+        const user = session.user;
+        const name = user.user_metadata.full_name;
+        
+        document.getElementById("welcome-message").textContent = `Welcome to ProjectMate, ${name}`;
+        document.getElementById("display-name").textContent = `${name} ▼`;
+
+    } else {
+        console.log("No session found");
+    }
+}
+
+loadUser();
+
+
 // Function to delete a project
 async function deleteProject(id) {
     if (!confirm("Are you sure you want to delete this project?")) return;

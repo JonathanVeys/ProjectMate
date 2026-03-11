@@ -104,7 +104,7 @@ def build_summary_prompt(project_spec: str, deadline:str|None=None) -> str:
         {{
             "task" (str): Title of task,
             "description" (str): A description detailing what exactly must be done for this task. 2-3 Sentences long,
-            "duration" (str): The time in hours that it should take to complete the task,
+            "duration" (int): The time in hours that it should take to complete the task, only as a interger or float, no characters,
             "due_date" (iso): The date that the user should complete this task to stay on track
         }}
     ],

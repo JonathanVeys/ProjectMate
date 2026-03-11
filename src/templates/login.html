@@ -3,36 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <title>ProjectMate</title>
-  <link rel="stylesheet" href="{{ url_for('static', path='css/login.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', path='css/templates_css/login.css') }}">
   <link rel="icon" type="image/x-icon" href="{{ url_for('static', path='img/favicon.ico') }}">
 </head>
 <body>
-  <div class="login-card">
-    <img src="{{ url_for('static', path='img/project_mate_logo.png') }}" alt="ProjectMate Logo" class="logo">
-    <h1>Welcome to ProjectMate</h1>
-    <p>Plan, manage, and track your projects effortlessly.</p>
-    <!-- <a href="/login">Login with Google</a> -->
+    <div class="login-card" id="login-div">
+            <h1 style="padding-bottom: 15px;">Welcome to ProjectMate</h1>
 
-    <div class="auth-buttons">
-      <a href="/login/google" class="auth-btn google">
-        <img src="/static/img/google_logo.svg">
-        Sign in with Google
-      </a>
-      <a href="/login/github" class="auth-btn github">
-        <img src="/static/img/github_logo.svg">
-        Sign in with GitHub
-      </a>
-      <a href="/login/apple" class="auth-btn apple">
-        <img src="/static/img/apple_logo.svg">
-        Sign in with Apple
-      </a>
-      <a href="/login/microsoft" class="auth-btn microsoft">
-        <img src="/static/img/microsoft_logo.svg">
-        Sign in with Microsoft
-      </a>
+            <input type="text" placeholder="Email Address" id="signin-email-address" class="text-input"><br><br>
+            <input type="password" placeholder="Password" id="signin-password" class="text-input"><br><br>
+            <div style="display: flex; flex-direction: row; gap: 10px;">
+                <button type="auth-btn" class="auth-btn" id="sign-in-btn">Log In</button>
+                <button type="auth-btn" class="auth-btn" id="show-sign-up-btn">Sign Up</button>
+            </div>
+            
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+            <div class="auth-buttons">
+                <button id="google-login" class="auth-btn google">
+                    <img src="{{ url_for('static', path='img/google_logo.svg') }}" alt="Google logo">
+                    Continue with Google
+                </button>
+                <button id="github-login" class="auth-btn github">
+                    <img src="{{ url_for('static', path='img/github_logo.svg') }}" alt="Github logo">
+                    Continue with Github
+                </button>
+                <button id="apple-login" class="auth-btn apple">
+                    <img src="{{ url_for('static', path='img/apple_logo.svg') }}" alt="Apple logo">
+                    Continue with Apple
+                </button>
+                <button id="microsoft-login" class="auth-btn microsoft">
+                    <img src="{{ url_for('static', path='img/microsoft_logo.svg') }}" alt="Microsoft logo">
+                    Continue with Microsoft
+                </button>
+            </div>
+        </div>
     </div>
 
-  </div>
+
+    <div class="login-card" id="sign-up-div" style="display: none; flex-direction: column; gap: 20px">
+        <div style="flex: 1">
+            <button  class="auth-btn" id="signup-back-btn" style="border-radius: 50px; width: 40px; height: 40px;">←</button>
+        </div>
+        <div style="flex: 10">
+            <form id="signup-form">
+                <input type="text" placeholder="Username" id="signin-name" class="text-input"><br><br>
+                <input type="email" placeholder="Email Address" id="signup-email-address" class="text-input"><br><br>
+                <input type="password" placeholder="Password" id="signup-password" class="text-input"><br><br>
+                <button type="button" class="auth-btn" id="sign-up-btn">Sign up</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="{{ url_for('static', path='js/utils.js') }}" defer></script>
+    <script src="{{ url_for('static', path='js/login.js') }}" defer></script>
 </body>
 </html>
 

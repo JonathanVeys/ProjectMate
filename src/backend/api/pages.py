@@ -9,28 +9,15 @@ from .supabase_client import supabase
 router = APIRouter(prefix="/pages", tags=["pages"])
 templates = Jinja2Templates(directory="src/templates")
 
+
+
+
 @router.get("/landing", response_class=HTMLResponse)
-async def landing_page(request: Request):
-    user = request.session.get("user")
-    if not user:
-        return RedirectResponse(url="/login")
-    
-    # Fetch all projects for this Supabase user
-    res = supabase.table("projects").select("*").eq("user_id", user["id"]).execute()
-    projects = cast(list[Dict[str, Any]], res.data if res.data else [])
-
-    # Format timestamps
-    for p in projects:
-        if p.get("deadline"):
-            dt = datetime.datetime.fromisoformat(p["deadline"].replace("Z", "+00:00"))
-            p["deadline_at_readable"] = dt.strftime("%d-%b-%Y")  
-
+async def landing_page(request:Request):
     return templates.TemplateResponse(
         "landing.html",
         {
-            "request": request, 
-            "name": user["name"],
-            "projects": projects
+            "request": request
         }
     )
 
