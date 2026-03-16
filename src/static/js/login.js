@@ -27,7 +27,7 @@ async function signUpNewUser() {
     email: email,
     password: password,
     options: {
-      emailRedirectTo: 'http://127.0.0.1:8000/pages/landing',
+      emailRedirectTo: redirectUrl(),
       data: {
             full_name: username 
         }
