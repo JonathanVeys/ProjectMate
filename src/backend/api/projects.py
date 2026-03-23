@@ -1,11 +1,12 @@
 from typing import Dict, Any, cast
 
-from fastapi import APIRouter, Request, Form, File, UploadFile
+from fastapi import APIRouter, Request, Form, File, UploadFile, Header, Depends
 from fastapi.responses import JSONResponse
 from fastapi.exceptions import HTTPException
 import uuid
 
-from .supabase_client import supabase
+from ..utils.supabase_client import supabase
+from ..utils.utils import get_current_user
 from .model_inference import inference, build_summary_prompt, extract_text_from_pdf, parse_llm_json
 from .tasks import insertTask
 from ...logging import logger
@@ -18,21 +19,16 @@ router = APIRouter(prefix="/projects", tags=["projects"])
 
 @router.post("/create")
 async def create_project(
-    request: Request,
     title: str = Form(...),
     deadline: str = Form(...),
     description: str = Form(...),
-    spec_file: UploadFile = File(None)
+    spec_file: UploadFile = File(None),
+    current_user = Depends(get_current_user)
 ):
     '''
     API endpoint for creating a new project
     '''
-
-    #Ensure a valid user is provided
-    user = request.session.get("user")
-    if not user:
-        raise HTTPException(status_code=401, detail="Not authenticated")
-    
+         
     #Generate project summary if spec_file is provide, else generate an empty dict for testing
     if spec_file:
         contents = await spec_file.read()
@@ -50,7 +46,7 @@ async def create_project(
     # 1. Insert the project first
     try:
         res = supabase.table("projects").insert({
-            "user_id": user['id'],
+            "user_id": current_user.id,
             "title": title,
             "deadline": deadline,
             "description": description,
@@ -59,8 +55,6 @@ async def create_project(
 
         #Log that the project has been successfully created
         logger.info(f"[CREATE PROJECT] Project created")
-        project = cast(Dict[str,Any], res.data[0])
-        project_id = project["id"]
     except Exception as e:
         logger.warning(f"[CREATE PROJECT] Failed to create new project | Error: {e}")
         raise HTTPException(status_code=401, detail=f"Failed to create project: {e}")
@@ -68,6 +62,10 @@ async def create_project(
 
     # 2. If file uploaded, save it in a folder named after project_id
     if spec_file:
+        project = cast(Dict[str,Any], res.data[0])
+        project_id = project["project_id"]
+
+
         filename = spec_file.filename
         file_path = f"{project_id}/{filename}"
 
@@ -82,13 +80,13 @@ async def create_project(
         # 3. Optionally store file URL/path in the DB
         supabase.table("projects").update({
             "spec_path": file_path
-        }).eq("id", project_id).execute()
+        }).eq("project_id", project_id).execute()
 
     if "tasks" in project_summary.keys():
         for i, task in enumerate(project_summary['tasks']):   
             insertTask(projectId=project_id, taskIdx=i, body=
                     {
-                        "id": task["id"],
+                        "task_id": task["id"],
                         "project_id": project_id,
                         "task_index": i,
                         "completed": False,
@@ -100,20 +98,16 @@ async def create_project(
 
 
 @router.delete("/delete/{project_id}")
-async def delete_project(request: Request, project_id:str):
+async def delete_project(request: Request, project_id:str, current_user=Depends(get_current_user)):
     '''
     API endpoint for deleting a project
     '''
-    user = request.session.get("user")
-
-    if not user:
-        return JSONResponse({"error":"Not authenticated"}, status_code=401)
-    user_id = user["id"]
+    user_id = current_user.id
 
     #Remove row relating to project
-    res = supabase.table("projects").delete().eq("id",project_id).eq("user_id", user_id).execute()
+    res = supabase.table("projects").delete().eq("project_id",project_id).eq("user_id", user_id).execute()
     res = cast(Dict[str,Any], res.data[0])
-    logger.info(f"[DELETE PROJECT] Project deleted: {res["id"]}")
+    logger.info(f"[DELETE PROJECT] Project deleted: {res["project_id"]}")
 
     #Remove files relating to project
     files = supabase.storage.from_("project_spec").list(project_id)
@@ -126,6 +120,36 @@ async def delete_project(request: Request, project_id:str):
     if res == []:  # nothing was deleted
         return JSONResponse({"error": "Project not found or not yours"}, status_code=404)
 
-    return {"success": True, "deleted_project": res["id"]}
+    return {"success": True, "deleted_project": res["project_id"]}
 
    
+
+@router.post("/invite/{user_id}")
+async def invite_user(
+    request: Request, 
+    current_user=Depends(get_current_user)):
+    '''
+    '''
+    #Get user information and check that user is authenticated
+    user = request.session.get("user")
+    if not user:
+        return JSONResponse({"error":"Not authenticated"}, status_code=401)
+    
+
+
+
+@router.get("/my-projects")
+async def get_my_projects(current_user = Depends(get_current_user)):
+    res = supabase.table("projects").select("*").eq("user_id", current_user.id).execute()
+    return {"projects": res.data or []}
+
+
+@router.get("/{project_id}/data")
+async def get_project_data(project_id:str, current_user=Depends(get_current_user)):
+    '''
+    
+    '''
+    res = supabase.table("projects").select("*").eq("project_id", project_id).execute()
+    if not res.data:
+        raise HTTPException(status_code=404, detail="Project not found")
+    return res.data[0]

@@ -190,6 +190,24 @@ nav a {
     margin-bottom: var(--spacing-md);
 }
 
+
+/* ======================================================
+    Project Metadata
+====================================================== */
+
+.project-metadata-div {
+    display: flex;
+    flex: row;
+    gap: 10px;
+}
+
+
+.vertical-line {
+  width: 1px;
+  height: 25px;
+  background-color: gray;
+}
+
 /* ======================================================
    PROGRESS BAR
 ====================================================== */

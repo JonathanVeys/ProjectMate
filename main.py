@@ -1,11 +1,12 @@
 from pathlib import Path
 
 from fastapi import FastAPI
+from fastapi.responses import RedirectResponse
 from starlette.middleware.sessions import SessionMiddleware
 from starlette.staticfiles import StaticFiles
 from starlette.config import Config
 
-from src.backend.api import projects, upload, oauth, model_inference, pages, tasks
+from src.backend.api import projects, upload, oauth, model_inference, pages, tasks, user
 
 CURRENT_DIR = Path(__file__).resolve().parent
 STATIC_DIR = CURRENT_DIR / "src/static"
@@ -26,3 +27,9 @@ app.include_router(model_inference.router)
 app.include_router(projects.router)
 app.include_router(pages.router)
 app.include_router(tasks.router)
+app.include_router(user.router)
+
+
+@app.get("/")
+async def root():
+    return RedirectResponse(url="/pages/landing")

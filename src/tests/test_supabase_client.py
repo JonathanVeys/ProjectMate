@@ -1,6 +1,6 @@
 # test_supabase_client.py
 import pytest
-from src.backend.api.supabase_client import supabase
+from src.backend.utils.supabase_client import supabase
 
 @pytest.mark.integration
 def test_supabase_client_is_initialised():

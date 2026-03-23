@@ -7,7 +7,7 @@ import json, json5, re
 from datetime import datetime
 from typing import cast, Dict, Any, List
 
-from .supabase_client import supabase
+from ..utils.supabase_client import supabase
 
 load_dotenv()
 router = APIRouter(prefix="/inference", tags=["inference"])
@@ -74,9 +74,9 @@ def build_summary_prompt(project_spec: str, deadline:str|None=None) -> str:
     - If a field is not mentioned in the text, return null.
     - Do NOT infer weighting, deliverables, deadlines, or policies.
     - Every task must directly originate from the project spec text.
-    - All dates must be ISO format if present, otherwise null.
+    - All dates must be date-only ISO 8601 format if present, otherwise null.
     - Each task should be short and precise, aim for tasks that should not take longer then 1-2 hours at a time.
-    - If deadline provided is a valid date, then assume that is the true deadline for the project regardless of what the spec says
+    - If deadline provided above is a valid date, then assume that is the true deadline for the project regardless of what the spec says
 
     THE JSON SCHEMA YOU MUST RETURN:
 

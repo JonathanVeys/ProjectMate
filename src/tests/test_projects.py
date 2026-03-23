@@ -8,7 +8,7 @@ from unittest.mock import patch, MagicMock
 
 
 from main import app
-from src.backend.api.supabase_client import supabase
+from src.backend.utils.supabase_client import supabase
 
 testClient = TestClient(app)
 

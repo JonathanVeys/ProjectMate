@@ -36,23 +36,25 @@
     margin-top: 10px;
 }
 
-.open-btn {
-    background: #4CAF50;
+.btn {
     color: white;
     padding: 6px 12px;
     border-radius: 6px;
     text-decoration: none;
 }
 
-.delete-btn {
-    background: #ff4d4d;
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 6px;
-    cursor: pointer;
+.open-project {
+    background: #4CAF50;
 }
 
-.delete-btn:hover {
+.open-project:hover {
+    background-color: #4CAF50;
+}
+
+.delete-project {
+    background: #ff4d4d;
+}
+
+.delete-project:hover {
     background: #e63939;
 }

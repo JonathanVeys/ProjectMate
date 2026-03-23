@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ProjectMate - {{ title }}</title>
+    <title>ProjectMate</title>
     <link rel="stylesheet" href="{{ url_for('static', path='css/templates_css/project.css') }}">
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', path='img/favicon.ico') }}">
 </head>
@@ -19,9 +19,7 @@
                 <li><a href="/contact">Contact</a></li>
 
                 <li class="user-menu">
-                    <span class="username" onclick="toggleUserMenu()">
-                        {{ name }} ▼
-                    </span>
+                    <span class="username" id="username" onclick="toggleUserMenu()"> Loading...▼</span>
 
                     <div id="userDropdown" class="dropdown">
                         <a href="/profile">Profile</a>
@@ -41,17 +39,21 @@
         <!-- SIDEBAR -->
         <aside class="sidebar">
             <a href="#" class="active">Overview</a>
-            <a href="/pages/tasks/{{ project_id }}" class=""> Tasks</a>
+            <a href="/pages/tasks/{{ project_id }}" class="">Tasks</a>
         </aside>
 
         <!-- MAIN PAGE CONTENT -->
         <main class="content">
-            <h1>Project: {{ title }}</h1>
-            <p class="project-meta">
-                Due in {{ days_remaining }} days | Weighting 50% | On track
-            </p>
-            <div class="progress-wrapper">
-                <div class="progress-bar" id="progress-bar" style="width: {{ progress }}%;"> {{ progress }}%</div>  
+            <h1 id="project-title" class="project-title">Loading...</h1>
+            <div class="project-metadata-div" id="project-metadata-div">
+                <div class="metadata-div" id="metadata-deadline">Loading...</div> 
+                <div class="vertical-line"></div>
+                <div class="metadata-div" id="metadata-weighting">Loading...</div>
+                <div class="vertical-line"></div>
+                <div class="metadata-div" id="metadata-track">Loading...</div>
+            </div>
+            <div class="progress-wrapper" id="progress-wrapper">
+                <div class="progress-bar" id="progress-bar" style="width: 0%;"> Loading... </div>
             </div>
 
             <hr style="color: gray;">
@@ -62,51 +64,41 @@
                     <div class="container tiles">
                         <div class="stat-card">
                             <div class="stat-title">Tasks Completed</div>
-                            <div class="stat-value"  id="completed-tasks-display">{{ (progress*total_number_tasks/100) | round | int }}/{{ total_number_tasks }}</div>
+                            <div class="stat-value"  id="completed-tasks-display">Loading...</div>
                         </div>
 
                         <div class="stat-card" id="deadline-tile">
                             <div class="stat-title">Days Remaining</div>
-                            <div class="stat-value" id="days-remaining-val"> {{ days_remaining }}</div>
+                             <div class="stat-value" id="days-remaining-val"> 0 Days</div>
                         </div>
 
                         <div class="stat-card">
                             <div class="stat-title">Estimated Remaining Effort</div>
-                            <div class="stat-value">{{ remaining_effort }} Hours</div>
+                            <div class="stat-value" id="stat-value">0 Hours</div>
                         </div>
                     </div>
                     <div class="container breakdown">
                         <h1>Project Breakdown</h1>
                         <div class="info-row">
                             <h3 class="label">Project Deadline:</h3>
-                            <span class="value">{{ project_spec['deadline'] }}</span>
+                            <span class="value" id="info-row-deadline">Loading...</span>
                         </div>
 
                         <div class="info-row">
                             <h3 class="label">Course Weighting:</h3>
-                            <span class="value">{{ project_spec['weighting'] }}</span>
+                            <span class="value" id="info-row-weighting">Loading...</span>
                         </div>
                         <h3>Description</h3>
-                        {{ project_spec['description_short'] }}
+                        <div id="project-description">Loading...</div>
                     </div>
                 </div>
                 <div class="container tasks">
                     <h1>Upcoming Tasks</h1>
-                    <form action="/action_page.php">
-                        {% for task in tasks %}
-                            <input 
-                                type="checkbox" 
-                                class="task-checkbox"
-                                data-task-id="{{ task['id'] }}"
-                                id="task-{{ task['task_index'] }}"
-                                name="tasks"
-                                value="{{ task['task_index'] }}"
-                                {% if task['completed'] %}checked{% endif %}
-                            >
-                            <label>{{ project_spec['tasks'][task['task_index']]['task'] }}</label>
-                            <br>
-                        {% endfor %}
-                    </form>
+                    <!-- <form action="/action_page.php"> -->
+                        <div class="upcoming-tasks" id="upcoming-tasks">
+
+                        </div>
+                    <!-- </form> -->
                 </div>
             </div>
         </main>
@@ -121,7 +113,8 @@
     
 
     <!-- Include Javascript -->
-    <script src="{{ url_for('static', path='js/project_overview.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="{{ url_for('static', path='js/utils.js') }}"></script>
+    <script src="{{ url_for('static', path='js/project_overview.js') }}"></script>
 </body>
 </html>

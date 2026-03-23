@@ -1,21 +1,53 @@
-document.querySelectorAll(".task-checkbox").forEach(checkbox => {
-    checkbox.addEventListener("change", async (event) => {
-        const taskId = event.target.dataset.taskId;
-        const isCompleted = event.target.checked;
-
-        await updateTaskCompletion(taskId, isCompleted);
-        updateProgressBar();
-        updateUrgencyState();
+// API endpoint callers to gather user or project data
+async function get_project_data(accessToken, project_id) {
+    const response = await fetch(`/projects/${project_id}/data`, {
+        method: "GET",
+        headers: {
+            Authorization: `Bearer ${accessToken}`
+        }
     });
-});
 
-async function updateTaskCompletion(taskId, completed) {
+    if (!response.ok) {
+        throw new Error("Failed to retrieve project data")
+    }
+
+    return await response.json();
+}
+
+async function get_tasks(accessToken, project_id) {
+    const response = await fetch(`/tasks/${project_id}`, {
+        method: "GET",
+        headers: {
+            Authorization: `Bearer ${accessToken}`
+        }
+    });
+
+    if (!response.ok) {
+        throw new Error("Failed to retrieve project data")
+    }
+
+    return await response.json();
+}
+
+
+
+// Update project functions
+function update_element(content = "Loading...", element_id) {
+    const element = document.getElementById(element_id);
+    if (element) {
+        element.textContent = content;
+    }
+}
+
+async function update_task_completion(acessToken, taskId, completed) {
     const res = await fetch(`/tasks/update/${taskId}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+        method: "PATCH",
+        headers: { 
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${acessToken}`
+        },
         body: JSON.stringify({ completed })
     });
-
     const data = await res.json();
 
     if (!data.success) {
@@ -23,47 +55,85 @@ async function updateTaskCompletion(taskId, completed) {
     }
 }
 
-function updateProgressBar() {
-    const checkboxes = document.querySelectorAll(".task-checkbox");
+async function show_tasks(tasks) {
+    const { data: sessionData, error: sessionError } = await supabaseClient.auth.getSession();
+    const accessToken = sessionData.session?.access_token;
+    const container = document.getElementById("upcoming-tasks");
+    tasks.forEach(task => {
+        const taskEl = document.createElement("div");
+        taskEl.className = "task-item";
+        taskEl.innerHTML = `
+            <input type="checkbox" id="task-${task.task_id}" data-task-id="${task.task_id}" ${task.completed ? "checked" : ""}>
+            <label for="task-${task.task_id}">${task.description}</label>
+        `;
+
+        const checkbox = taskEl.querySelector("input[type='checkbox']");
+        checkbox.addEventListener("change", async (event) => {
+            const taskId = event.target.dataset.taskId;
+            const isCompleted = event.target.checked;
+            await update_task_completion(accessToken, taskId, isCompleted);
+            update_progress_bar()
+            // updateUrgencyState();
+        });
+
+        container.appendChild(taskEl);
+    });
+}
+
+function update_progress_bar() {
+    const checkboxes = document.querySelectorAll("#upcoming-tasks input[type='checkbox']");
     const total = checkboxes.length;
     const completedCount = Array.from(checkboxes).filter(cb => cb.checked).length;
 
-    const percent = total > 0 
-        ? Math.round((completedCount / total) * 100)
-        : 0;
+    const percent = completedCount / total * 100;
 
     const bar = document.getElementById("progress-bar");
     bar.style.width = percent + "%";
     bar.textContent = percent + "%";
-
-    // NEW: update X/Y display
-    const completedDisplay = document.getElementById("completed-tasks-display");
-    if (completedDisplay) {
-        completedDisplay.textContent = `${completedCount}/${total}`;
-    }
 }
 
 
-function updateUrgencyState() {
-    const tile = document.getElementById("deadline-tile");
-    const valueElem = document.getElementById("days-remaining-val");
-    const progressElem = document.getElementById("progress-bar");
 
-    if (!tile || !valueElem || !progressElem) return;
+// Main document listener
+document.addEventListener("DOMContentLoaded", async () => {
+    const { data: sessionData, error: sessionError } = await supabaseClient.auth.getSession();
+    const accessToken = sessionData.session?.access_token;
+    const user = sessionData.session?.user ?? "User";
+    const pathParts = window.location.pathname.split("/");
+    const projectId = pathParts[pathParts.length - 1];
 
-    const progressVal = parseInt(progressElem.textContent.trim());
-    const daysRemaining = parseInt(valueElem.textContent.trim());
-
-    // If progress > 90% → clear warnings
-    if (progressVal > 90) {
-        tile.classList.remove("shake", "urgent");
+    if (!accessToken) {
+        console.error("No access token found");
         return;
     }
 
-    // If progress <= 90 AND days < 5 → show warnings
-    if (daysRemaining < 5) {
-        tile.classList.add("shake", "urgent");
-    } else {
-        tile.classList.remove("shake", "urgent");
-    }
-}
+
+    const project_data = await get_project_data(accessToken, projectId)
+    const tasks = await get_tasks(accessToken, projectId)
+
+    console.log(project_data);
+
+    // User data
+    const username = user?.user_metadata?.full_name
+
+    // Project data
+    const project_title = project_data?.title
+    const project_deadline = project_data?.deadline
+    const project_weighting = project_data?.weighting
+
+    // Task data
+    const completedTasks = tasks.filter(task => task.completed === true);
+    const incompleteTasks = tasks.filter(task => task.completed === false); 
+
+    update_element(`${username} ▼`, "username");
+    update_element(project_title, "project-title");
+    update_element(project_deadline, "metadata-deadline");
+    update_element(project_weighting, "metadata-weighting");
+    await show_tasks(tasks);
+    update_progress_bar(completedTasks.length / tasks.length * 100, "progress-bar");
+});
+
+
+
+
+

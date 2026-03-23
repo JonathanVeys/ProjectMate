@@ -3,7 +3,9 @@ const SUPABASE_URL = "https://bagwatovrhptoojzjfhz.supabase.co";
 const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJhZ3dhdG92cmhwdG9vanpqZmh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM0NTI2MTIsImV4cCI6MjA3OTAyODYxMn0.Qh1tSXVlrnEBWoE8ZGGkWPY1ygUpPTtGdC4z4ZKwCSc";
 const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-
+if (!window.supabase) {
+    console.error("Supabase library not loaded");
+}
 
 // Function to handle menu bar
 function toggleUserMenu() {
@@ -15,6 +17,7 @@ function toggleUserMenu() {
 document.addEventListener("click", function(event) {
     const menu = document.querySelector(".user-menu");
     const dropdown = document.getElementById("userDropdown");
+    const logout = document.getElementById("")
 
     if (!menu || !dropdown) return; 
 
@@ -34,3 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
         deleteUser();
     });
 });
+
+
+
+function home() {
+    window.location.href = "/pages/landing";
+}

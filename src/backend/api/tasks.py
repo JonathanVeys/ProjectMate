@@ -1,7 +1,9 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
+from fastapi.exceptions import HTTPException
 from pydantic import BaseModel
 
-from .supabase_client import supabase
+from ..utils.supabase_client import supabase
+from ..utils.utils import get_current_user
 from ...logging import logger
 
 
@@ -19,7 +21,7 @@ class Task(BaseModel):
 
 
 @router.patch("/update/{task_id}")
-def updateTask(task_id:str, body:dict):
+async def updateTask(task_id:str, body:dict, current_user=Depends(get_current_user)):
     '''
     API endpoint for updating the status of a task from uncompleted to completed
     
@@ -30,15 +32,21 @@ def updateTask(task_id:str, body:dict):
     '''
     completed = body.get("completed")
 
-    supabase.table("task_progress") \
+    res = supabase.table("task_progress") \
         .update({"completed": completed}) \
-        .eq("id", task_id) \
+        .eq("task_id", task_id) \
         .execute()
+    
 
     return {"success": True}
 
 
+
+
 def insertTask(projectId:str, body: dict, taskIdx:int|None=None):
+    '''
+    
+    '''
     body["project_id"] = projectId
     if taskIdx is not None:
         body["task_index"] = taskIdx
@@ -61,3 +69,11 @@ def createTask(projectId:str, task:Task, taskIdx:int|None=None):
     except Exception as e:
         logger.exception("Failed to create task")
         return {"success": False, "error": str(e)}
+    
+
+@router.get("/{project_id}")
+async def get_tasks(project_id:str, current_user=Depends(get_current_user)):
+    res = supabase.table("task_progress").select("*").eq("project_id", project_id).execute()
+    if not res.data:
+        raise HTTPException(status_code=404, detail="Project not found")
+    return res.data

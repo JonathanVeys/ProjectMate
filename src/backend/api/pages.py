@@ -1,10 +1,11 @@
 import datetime
 from typing import Dict, Any, cast, List
 
-from fastapi import APIRouter, Request
+from fastapi import APIRouter, Request, Depends
 from fastapi.responses import RedirectResponse, HTMLResponse
 from fastapi.templating import Jinja2Templates
-from .supabase_client import supabase
+from ..utils.supabase_client import supabase
+from ..utils.utils import get_current_user
 
 router = APIRouter(prefix="/pages", tags=["pages"])
 templates = Jinja2Templates(directory="src/templates")
@@ -17,50 +18,70 @@ async def landing_page(request:Request):
     return templates.TemplateResponse(
         "landing.html",
         {
-            "request": request
+            "request": request,
         }
     )
 
 
+# @router.get("/projects/{project_id}", response_class=HTMLResponse)
+# async def project_page(
+#     request: Request, 
+#     project_id: str,
+#     current_user = Depends(get_current_user)):
+
+#     '''
+    
+#     '''
+    
+#     res_project = supabase.table("projects").select("*").eq("id", project_id).execute()
+#     project = cast(Dict[str, Any], res_project.data[0])
+    
+#     res_tasks:list = supabase.table("task_progress").select("*").eq("project_id", project_id).execute().data
+#     res_tasks = sorted(res_tasks, key=lambda t: t["task_index"])
+#     if res_tasks is None:
+#         raise ValueError("Project has no tasks")
+#     completed_lookup = {t["id"]:t["completed"] for t in res_tasks}
+    
+#     proportion_completed = round(sum(1 for t in res_tasks if t['completed']==True)/len(res_tasks)*100, 1)
+#     missing_tasks = [task for task in project["summary_json"]["tasks"] if not completed_lookup.get(task["id"], False)]
+#     remaining_effort = sum(float(task["duration"]) for task in missing_tasks)
+
+#     deadline_dt = datetime.datetime.fromisoformat(project["deadline"])
+#     days_remaining = (deadline_dt - datetime.datetime.now(datetime.UTC)).days
+
+#     total_number_tasks = len(res_tasks)
+    
+#     return templates.TemplateResponse(
+#         "project_overview.html",
+#         {
+#             "request":request,
+#             "name":current_user.raw_user_meta_data.name,
+#             "project_id":project_id,
+#             "title":project["title"],
+#             "description":project["description"],
+#             "spec_path":project["spec_path"],
+#             "project_spec":project["summary_json"],
+#             "tasks":res_tasks,
+#             "progress":proportion_completed,
+#             "days_remaining":days_remaining,
+#             "remaining_effort":remaining_effort,
+#             "total_number_tasks":total_number_tasks
+#         }
+#     )
+
 @router.get("/projects/{project_id}", response_class=HTMLResponse)
-async def project_page(request: Request, project_id: str):
-    user = request.session.get("user")
-    if not user:
-        return RedirectResponse(url="/login")
+async def project_page(
+    request:Request,
+    project_id:str
+):
+    '''
     
-    res_project = supabase.table("projects").select("*").eq("id", project_id).execute()
-    project = cast(Dict[str, Any], res_project.data[0])
-    
-    res_tasks:list = supabase.table("task_progress").select("*").eq("project_id", project_id).execute().data
-    res_tasks = sorted(res_tasks, key=lambda t: t["task_index"])
-    if res_tasks is None:
-        raise ValueError("Project has no tasks")
-    completed_lookup = {t["id"]:t["completed"] for t in res_tasks}
-    
-    proportion_completed = round(sum(1 for t in res_tasks if t['completed']==True)/len(res_tasks)*100, 1)
-    missing_tasks = [task for task in project["summary_json"]["tasks"] if not completed_lookup.get(task["id"], False)]
-    remaining_effort = sum(float(task["duration"]) for task in missing_tasks)
+    '''
 
-    deadline_dt = datetime.datetime.fromisoformat(project["deadline"])
-    days_remaining = (deadline_dt - datetime.datetime.now(datetime.UTC)).days
-
-    total_number_tasks = len(res_tasks)
-    
     return templates.TemplateResponse(
         "project_overview.html",
         {
-            "request":request,
-            "name":user["name"],
-            "project_id":project_id,
-            "title":project["title"],
-            "description":project["description"],
-            "spec_path":project["spec_path"],
-            "project_spec":project["summary_json"],
-            "tasks":res_tasks,
-            "progress":proportion_completed,
-            "days_remaining":days_remaining,
-            "remaining_effort":remaining_effort,
-            "total_number_tasks":total_number_tasks
+            "request":request
         }
     )
 

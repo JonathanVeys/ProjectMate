@@ -1,14 +1,8 @@
-import datetime
-from typing import Dict, Any, cast
-import os
-
 from fastapi import APIRouter, Request, HTTPException
 from fastapi.responses import RedirectResponse, HTMLResponse
-from authlib.integrations.starlette_client import OAuth
-from starlette.config import Config
 from fastapi.templating import Jinja2Templates
 
-from .supabase_client import supabase  
+from ..utils.supabase_client import supabase  
 from ...logging import logger
 
 
