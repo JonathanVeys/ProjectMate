@@ -4,3 +4,6 @@ venv/
 .env
 DELETEME.py
 running_logs.log
+__pycache__/
+logs/
+*.pyc
